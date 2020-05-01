@@ -515,7 +515,7 @@ Your car needs! </div>
             <div class="col-lg-4 col-md-12">
               <div class="car-item gray-bg text-center">
                <div class="car-image">
-                 <img class="img-fluid" src="images/car/01.jpg" alt="">
+                 <img class="img-fluid" src="/images/01.jpg" alt="">
                  <div class="car-overlay-banner">
                   <ul> 
                     <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -552,7 +552,7 @@ Your car needs! </div>
             <div class="col-lg-4 col-md-12">
               <div class="car-item gray-bg text-center">
                <div class="car-image">
-                 <img class="img-fluid" src="images/car/02.jpg" alt="">
+                 <img class="img-fluid" src="/images/02.jpg" alt="">
                  <div class="car-overlay-banner">
                   <ul> 
                     <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -589,7 +589,7 @@ Your car needs! </div>
             <div class="col-lg-4 col-md-12">
               <div class="car-item gray-bg text-center">
                <div class="car-image">
-                 <img class="img-fluid" src="images/car/03.jpg" alt="">
+                 <img class="img-fluid" src="/images/03.jpg" alt="">
                  <div class="car-overlay-banner">
                   <ul> 
                     <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -626,7 +626,7 @@ Your car needs! </div>
             <div class="col-lg-4 col-md-12">
               <div class="car-item gray-bg text-center">
                <div class="car-image">
-                 <img class="img-fluid" src="images/car/04.jpg" alt="">
+                 <img class="img-fluid" src="/images/04.jpg" alt="">
                  <div class="car-overlay-banner">
                   <ul> 
                     <li><a href="#"><i class="fa fa-link"></i></a></li>

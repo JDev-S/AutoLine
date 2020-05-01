@@ -885,23 +885,23 @@ Your car needs! </div>
         <div class="slider-slick">
           <div class="slider slider-for detail-big-car-gallery"> 
                 <img class="img-fluid" src="/images/01.jpg" alt="">
-                <img class="img-fluid" src="images/detail/big/02.jpg" alt="">
-                <img class="img-fluid" src="images/detail/big/03.jpg" alt="">
-                <img class="img-fluid" src="images/detail/big/04.jpg" alt="">
-                <img class="img-fluid" src="images/detail/big/05.jpg" alt="">
-                <img class="img-fluid" src="images/detail/big/06.jpg" alt="">
-                <img class="img-fluid" src="images/detail/big/07.jpg" alt="">
-                <img class="img-fluid" src="images/detail/big/08.jpg" alt="">
+                <img class="img-fluid" src="/images/02.jpg" alt="">
+                <img class="img-fluid" src="/images/03.jpg" alt="">
+                <img class="img-fluid" src="/images/04.jpg" alt="">
+                <img class="img-fluid" src="/images/05.jpg" alt="">
+                <img class="img-fluid" src="/images/06.jpg" alt="">
+                <img class="img-fluid" src="/images/07.jpg" alt="">
+                <img class="img-fluid" src="/images/08.jpg" alt="">
             </div>
             <div class="slider slider-nav"> 
-                <img class="img-fluid" src="images/detail/thum/01.jpg" alt=""> 
-                <img class="img-fluid" src="images/detail/thum/02.jpg" alt=""> 
-                <img class="img-fluid" src="images/detail/thum/03.jpg" alt=""> 
-                <img class="img-fluid" src="images/detail/thum/04.jpg" alt=""> 
-                <img class="img-fluid" src="images/detail/thum/05.jpg" alt=""> 
-                <img class="img-fluid" src="images/detail/thum/06.jpg" alt=""> 
-                <img class="img-fluid" src="images/detail/thum/07.jpg" alt=""> 
-                <img class="img-fluid" src="images/detail/thum/08.jpg" alt=""> 
+                <img class="img-fluid" src="/images/01.jpg" alt=""> 
+                <img class="img-fluid" src="/images/02.jpg" alt=""> 
+                <img class="img-fluid" src="/images/03.jpg" alt=""> 
+                <img class="img-fluid" src="/images/04.jpg" alt=""> 
+                <img class="img-fluid" src="/images/05.jpg" alt=""> 
+                <img class="img-fluid" src="/images/06.jpg" alt=""> 
+                <img class="img-fluid" src="/images/07.jpg" alt=""> 
+                <img class="img-fluid" src="/images/08.jpg" alt=""> 
             </div>
          </div>
         <div id="tabs">
@@ -1009,7 +1009,7 @@ Your car needs! </div>
         <div class="item">
          <div class="car-item gray-bg text-center">
            <div class="car-image">
-             <img class="img-fluid" src="images/car/01.jpg" alt="">
+             <img class="img-fluid" src="/images/01.jpg" alt="">
              <div class="car-overlay-banner">
               <ul> 
                 <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -1044,7 +1044,7 @@ Your car needs! </div>
        <div class="item">
          <div class="car-item gray-bg text-center">
            <div class="car-image">
-             <img class="img-fluid" src="images/car/02.jpg" alt="">
+             <img class="img-fluid" src="/images/02.jpg" alt="">
              <div class="car-overlay-banner">
               <ul> 
                 <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -1079,7 +1079,7 @@ Your car needs! </div>
        <div class="item">
          <div class="car-item gray-bg text-center">
            <div class="car-image">
-             <img class="img-fluid" src="images/car/03.jpg" alt="">
+             <img class="img-fluid" src="/images/03.jpg" alt="">
              <div class="car-overlay-banner">
               <ul> 
                 <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -1114,7 +1114,7 @@ Your car needs! </div>
         <div class="item">
          <div class="car-item gray-bg text-center">
            <div class="car-image">
-             <img class="img-fluid" src="images/car/04.jpg" alt="">
+             <img class="img-fluid" src="/images/04.jpg" alt="">
              <div class="car-overlay-banner">
               <ul> 
                 <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -1243,7 +1243,7 @@ Your car needs! </div>
        </div>
      </div>
 </section>
-
+<script type="text/javascript" src="/js/slick.min.js"></script>
 <!--=================================
 car-details -->
  
