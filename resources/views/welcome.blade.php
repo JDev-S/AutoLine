@@ -42,6 +42,8 @@
 <!-- Style customizer -->
 <link rel="stylesheet" href="#" data-style="styles" />
 <link rel="stylesheet" type="text/css" href="/css/style-customizer.css" />
+<link rel="stylesheet" type="text/css" href="/css/slick.css" />
+<link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
