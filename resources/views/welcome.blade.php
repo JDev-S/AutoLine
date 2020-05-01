@@ -463,6 +463,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- style customizer  -->
 <script type="text/javascript" src="/js/style-customizer.js"></script>
+    <script type="text/javascript" src="/js/slick.min.js"></script>
 
 <script type="text/javascript">
  (function($){
