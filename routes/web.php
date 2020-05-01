@@ -21,6 +21,10 @@ Route::get('/vehiculos', function () {
     return view('/principal/vehiculos');
 });
 
+Route::get('/vehiculo', function () {
+    return view('/principal/vehiculo');
+});
+
 Route::get('/contacto', function () {
     return view('/principal/contacto');
 });
