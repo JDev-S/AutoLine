@@ -543,7 +543,7 @@ var POTENZA = {};
 
 })(jQuery);
 
-$( document ).ready(function() {    
+/*$( document ).ready(function() {    
   $.ajax({
     url: 'http://themes.potenzaglobalsolutions.com/top-bar-section.php',
     type: 'post',
@@ -554,7 +554,7 @@ $( document ).ready(function() {
     },
     
   });        
-});
+});*/
 $(document).on('click','a.frame-close', function(e){
   $('.header-preview').slideUp(); 
 });

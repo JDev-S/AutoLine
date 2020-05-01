@@ -157,8 +157,7 @@
 }
 @media screen and (max-width: 992px) {
   .mega-menu .menu-links {
-    width: 100%;
-    background: #fff;
+    background: #000000;
   }
 }
 @media screen and (min-width: 993px) {
@@ -187,7 +186,7 @@
     position: relative;
     cursor: pointer;
     line-height: normal;
-    border-bottom: 1px solid #f3f3f3;
+    border-bottom: 1px solid #303033;
     z-index: 50;
   }
   .mega-menu .menu-links > li.activeTriggerMobile {
