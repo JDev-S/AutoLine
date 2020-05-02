@@ -38,7 +38,7 @@
                  <button id="submit" name="submit" type="submit" value="Send" class="button red"> Send your message </button>
                </div>
             </form>
-            <div id="ajaxloader" style="display:none"><img class="center-block" src="images/ajax-loader.gif" alt=""></div> 
+            <div id="ajaxloader" style="display:none"><img class="center-block" src="/images/ajax-loader.gif" alt=""></div> 
           </div>
         </div>
        </div>
