@@ -420,7 +420,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- jquery  -->
 <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
- 
+<script type="text/javascript" src="/js/slick.min.js"></script>
 <!-- bootstrap -->
 <script type="text/javascript" src="/js/popper.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
@@ -465,7 +465,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- style customizer  -->
 <script type="text/javascript" src="/js/style-customizer.js"></script>
-    <script type="text/javascript" src="/js/slick.min.js"></script>
+
 
 <script type="text/javascript">
  (function($){

@@ -1243,7 +1243,7 @@ Your car needs! </div>
        </div>
      </div>
 </section>
-<script type="text/javascript" src="/js/slick.min.js"></script>
+
 <!--=================================
 car-details -->
  
