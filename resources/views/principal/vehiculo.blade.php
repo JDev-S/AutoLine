@@ -487,7 +487,7 @@ Your car needs! </div>
    <div class="col-md-4">
        <div class="car-details-sidebar">
           <div class="details-block details-weight">
-            <h5>DESCRIPTION</h5>
+            <h5>Descripción</h5>
             <ul>
               <li> <span>Make</span> <strong class="text-right">BMW</strong></li>
               <li> <span>Model</span> <strong class="text-right">7-series</strong></li>
@@ -502,7 +502,7 @@ Your car needs! </div>
             </ul>
           </div>
           <div class="details-social details-weight">
-            <h5>Share now</h5>
+            <h5>Compartir ahora</h5>
             <ul>
               <li><a href="#"> <i class="fa fa-facebook"></i> facebook</a></li>
               <li><a href="#"> <i class="fa fa-twitter"></i> twitter</a></li>
@@ -514,25 +514,40 @@ Your car needs! </div>
             </div>
             <div class="details-form contact-2 details-weight">
                <form class="gray-form">
-                <h5>SEND ENQUIRY</h5>
+                <h5>Realizar cotización</h5>
                 <div class="form-group">
-                   <label>Name*</label>
-                   <input type="text" class="form-control" placeholder="Name">
+                   <label>Nombre*</label>
+                   <input type="text" class="form-control" placeholder="Nombre completo">
                 </div>
                  <div class="form-group">
-                    <label>Email address*</label>
-                    <input type="text" class="form-control" placeholder="Email">
+                    <label>Correo*</label>
+                    <input type="text" class="form-control" placeholder="ejemplo@gmail.com">
                 </div>
                  <div class="form-group">
-                    <label>password*</label>
-                    <input type="text" class="form-control" placeholder="Password">
+                    <label>Teléfono*</label>
+                    <input type="text" class="form-control" placeholder="Teléfono">
                 </div>
+                <div class="form-group">
+                    <label>Costo del auto*</label>
+                    <input type="text" class="form-control" placeholder="$000,000,000">
+                </div>
+                <div class="form-group">
+                    <label>Enganche*</label>
+                    <input type="text" class="form-control" placeholder="$000,000,000">
+                </div>
+                <div class="form-group">
+                    <label>Comprobar Ingresos*</label>
+                    <input type="checkbox" class="noneDysplay" id="ingresos">
+                </div>
+                <div class="form-group">
+                    <label>Tiene historial*</label>
+                    <input type="checkbox" class="noneDysplay" id="ingresos">
+                </div>
+                   <p>
+                   Si el cliente no tiene historial crediticio ni comprobante de ingresos, se solicitará un enganche de mínimo el 35%
+                   </p>
                  <div class="form-group">
-                   <label>Comment* </label>
-                   <textarea class="form-control" rows="4" placeholder="Comment"></textarea>
-                  </div>
-                 <div class="form-group">
-                  <a class="button red" href="#">Request a service</a>
+                  <a class="button red" href="#">Realizar cotización.</a>
                 </div>
               </form>
             </div> 
