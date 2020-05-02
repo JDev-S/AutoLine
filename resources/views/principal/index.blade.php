@@ -141,98 +141,7 @@ Your car needs! </div>
 <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> </div>
 </div>
 
-<section class="search white-bg">
-  <div class="container">
-   <div class="search-block">
-    <div class="row">
-     <div class="col-md-8">
-      <div class="row">
-       <div class="col-md-4">
-        <span>Select make</span>
-          <div class="selected-box">
-            <select class="selectpicker">
-            <option>Make </option>
-            <option>BMW</option>
-            <option>Honda </option>
-            <option>Hyundai </option>
-            <option>Nissan </option>
-            <option>Mercedes Benz </option>
-           </select>
-          </div>
-        </div>
-        <div class="col-md-4">
-        <span>Select model</span>
-          <div class="selected-box">
-           <select class="selectpicker">
-            <option>Model</option>
-            <option>3-Series</option>
-            <option>Carrera</option>
-            <option>GT-R</option>
-            <option>Cayenne</option>
-            <option>Mazda6</option>
-            <option>Macan</option>
-           </select>
-         </div>
-        </div>
-        <div class="col-md-4">
-        <span>Select yar</span>
-         <div class="selected-box">
-           <select class="selectpicker">
-            <option>Year</option>
-            <option>2010</option>
-            <option>2011</option>
-            <option>2012</option>
-            <option>2013</option>
-            <option>2014</option>
-            <option>2015</option>
-            <option>2016</option>
-           </select>
-          </div>
-        </div>
-        <div class="col-md-4">
-        <span>Select body style</span>
-        <div class="selected-box">
-         <select class="selectpicker">
-            <option>Body style</option>
-            <option>2dr Car</option>
-            <option>4dr Car</option>
-            <option>Convertible</option>
-            <option>Sedan</option>
-            <option>Sports Utility</option>
-           </select>
-          </div>
-        </div>
-        <div class="col-md-4">
-       <span>Select vehicle status</span>
-         <div class="selected-box">
-           <select class="selectpicker">
-            <option>Vehicle Status</option>
-            <option>Condition</option>
-            <option>All Conditions</option>
-            <option>Condition</option>
-            <option>Brand New</option>
-            <option>Slightly Used</option>
-            <option>Used</option> 
-           </select>
-         </div>
-        </div>
-      </div>
-     </div>
-    <div class="col-md-4">
-     <div class="price-slide">
-        <div class="price">
-         <label for="amount">Price Range</label>
-          <input type="text" id="amount" class="amount" value="$50 - $300" />
-          <div id="slider-range"></div>
-          <a class="button" href="#">Search the Vehicle</a>
-          <a class="link" href="#">ADVANCED SEARCH</a>
-        </div>
-       </div>
-    </div>
-   </div>
-  </div>
- </div>
-</section>      
+   
 
 
 
@@ -241,8 +150,8 @@ Your car needs! </div>
    <div class="row">
     <div class="col-md-12">
       <div class="section-title">
-         <span>Check out our recent cars</span>
-         <h2>Feature Car </h2>
+        
+         <h2>Carros  registrados recientemente</h2>
          <div class="separator"></div>
       </div>
     </div>
@@ -386,8 +295,7 @@ Your car needs! </div>
    <div class="row">
     <div class="col-md-12">
       <div class="section-title">
-         <span>Check out our recent cars</span>
-         <h2>Feature Car </h2>
+         <h2>Carros registrados inicialmente </h2>
          <div class="separator"></div>
       </div>
     </div>

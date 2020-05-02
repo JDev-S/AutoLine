@@ -7,8 +7,8 @@
     <div class="row">
       <div class="col-md-12 justify-content-center">
          <div class="section-title">
-           <span>We’d Love to Hear From You</span>
-           <h2>LET'S GET IN TOUCH!</h2>
+           <span>Encantados en escucharte.</span>
+           <h2>Pongámonos en contacto!</h2>
            <div class="separator"></div>
          </div>
       </div>
@@ -19,23 +19,23 @@
          <div class="col-md-12">
           <div id="formmessage">Success/Error Message Goes Here</div>
            <form class="form-horizontal" id="contactform" role="form" method="post" action="php/contact-form.php">
-            <h5>We have completed over a 1000+ projects for five hundred clients. Give us your next project.</h5>
-            <p>It would be great to hear from you! If you got any questions, please do not hesitate to send us a message. We are looking forward to hearing from you! We reply within 24 hours !</p>
+            
+            <p>¡Sería genial saber de ti! Si tiene alguna pregunta, no dude en enviarnos un mensaje. ¡Esperamos tener noticias suyas! Respondemos en 24 horas. !</p>
             <div class="contact-form">
                <div class="form-group">
-                 <input id="name" type="text" placeholder="Name*" class="form-control"  name="name">
+                 <input id="name" type="text" placeholder="Nombre completo*" class="form-control"  name="name">
              </div> 
                <div class="form-group">
-                 <input type="email" placeholder="Email*" class="form-control" name="email">
+                 <input type="email" placeholder="Correo*" class="form-control" name="email">
                 </div>
                 <div class="form-group">
-                  <input type="text" placeholder="Phone*" class="form-control" name="phone">
+                  <input type="text" placeholder="Teléfono*" class="form-control" name="phone">
               </div>
                  <div class="form-group">
-                   <textarea class="form-control input-message" placeholder="Comment*" rows="7" name="message"></textarea>
+                   <textarea class="form-control input-message" placeholder="Comentario*" rows="7" name="message"></textarea>
               </div>
                  <input type="hidden" name="action" value="sendEmail"/>
-                 <button id="submit" name="submit" type="submit" value="Send" class="button red"> Send your message </button>
+                 <button id="submit" name="submit" type="submit" value="Send" class="button red"> Enviar!! </button>
                </div>
             </form>
             <div id="ajaxloader" style="display:none"><img class="center-block" src="/images/ajax-loader.gif" alt=""></div> 
@@ -48,7 +48,7 @@
                <i class="fa fa-map-marker"></i>
              </div>
              <div class="content">
-               <h5>Address </h5>
+               <h5>Dirección </h5>
                 <p>220E Front St. Burlington NC 215 </p>
               </div>
             </div>
@@ -57,7 +57,7 @@
                <i class="fa fa-phone"></i>
              </div>
              <div class="content">
-               <h5>Phone </h5>
+               <h5>Teléfono </h5>
                 <p>(007) 123 456 7890 </p>
               </div>
             </div>
@@ -66,20 +66,20 @@
                <i class="fa fa-envelope-o"></i>
              </div>
              <div class="content">
-               <h5>Email  </h5>
+               <h5>Correo  </h5>
                 <p> support@website.com </p>
               </div>
             </div>
             <div class="opening-hours gray-bg">
-                <h6>opening hours</h6>
+                <h6>Horarios</h6>
                 <ul class="list-style-none">
-                  <li><strong>Sunday</strong> <span class="text-red"> closed</span></li>
-                  <li><strong>Monday</strong> <span> 9:00 AM to 9:00 PM</span></li>
-                  <li><strong>Tuesday </strong> <span> 9:00 AM to 9:00 PM</span></li>
-                  <li><strong>Wednesday </strong> <span> 9:00 AM to 9:00 PM</span></li>
-                  <li><strong>Thursday </strong> <span> 9:00 AM to 9:00 PM</span></li>
-                  <li><strong>Friday </strong> <span> 9:00 AM to 9:00 PM</span></li>
-                  <li><strong>Saturday </strong> <span> 9:00 AM to 9:00 PM</span></li>
+                  <li><strong>Domingo</strong> <span class="text-red"> closed</span></li>
+                  <li><strong>Lunes</strong> <span> 9:00 AM to 9:00 PM</span></li>
+                  <li><strong>Martes </strong> <span> 9:00 AM to 9:00 PM</span></li>
+                  <li><strong>Miércoles </strong> <span> 9:00 AM to 9:00 PM</span></li>
+                  <li><strong>Jueves </strong> <span> 9:00 AM to 9:00 PM</span></li>
+                  <li><strong>Viernes </strong> <span> 9:00 AM to 9:00 PM</span></li>
+                  <li><strong>Sábado </strong> <span> 9:00 AM to 9:00 PM</span></li>
                 </ul>
               </div>
          </div>
