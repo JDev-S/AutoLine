@@ -33,7 +33,7 @@
                   <td>{{ $auto->modelo}}</td>
                   
                   <td>{{ $auto->precio}}</td>
-                  <td> <img src='{{ $auto->foto}}'></td>
+                  <td> <img src='{{ $auto->foto}}' width="200px" height="200px" alt='{{$auto->foto}}'></td>
                   <td>
                   
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-id="<?php echo $auto->id_auto;?>"  data-modelo="<?php echo $auto->modelo;?>">Eliminar</button>
@@ -88,7 +88,7 @@
      <div class="modal-body">
     
 
-     {{ Form::open(array('action' => 'AutoController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
+     {{ Form::open(array('action' => 'AutoController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform','enctype'=>'multipart/form-data')) }}
          <div class="form-group">
            <label for="recipient-name" class="col-form-label">Marca:</label>
            {{ Form::text('marca_show', '', array('id' => 'marca_show',  'placeholder' => 'Marca del auto','required' => 'required')) }}
@@ -103,7 +103,7 @@
          </div>
         <div class="form-group">
            <label for="recipient-name" class="col-form-label">Foto:</label>
-           {{ Form::text('foto_show', '', array('id' => 'foto_show',  'placeholder' => 'Foto del auto','required' => 'required')) }}
+           {{ Form::file('foto_show', array('id' => 'foto_show')) }}
          </div>
         
          <div class="modal-footer">
@@ -145,9 +145,15 @@
            {{ Form::text('precio_show', '', array('id' => 'precio_show',  'placeholder' => 'Precio del auto' ,'required' => 'required')) }}
            
         </div>
+        
+         <div class="form-group">
+          <label for="recipient-name" class="col-form-label">Imagen anterior:</label>
+           <img src="" height="200px" width="200px;" id="foto_show"/>
+           
+        </div>
         <div class="form-group">
           <label for="recipient-name" class="col-form-label">Foto:</label>
-           {{ Form::text('foto_show', '', array('id' => 'foto_show',  'placeholder' => 'Foto del auto' ,'required' => 'required')) }}
+           {{ Form::file('foto_show2', array('id' => 'foto_show2')) }}
            
         </div>
 
