@@ -158,6 +158,82 @@ class AutoController extends Controller
 		return view('/principal/vehiculos',compact('aAutos'));
     }
     
+        public function mostrar_autos2()
+    {
+        $aAutos = array();
+        $aAutos_final=array();
+
+		$autos=DB::select("SELECT * from ((select auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto,descripcion_especificcacion.descripcion,especificacion.especificacion from auto left join descripcion_especificcacion on auto.id_auto=descripcion_especificcacion.id_auto inner join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion WHERE auto.id_auto in ( SELECT auto.id_auto FROM ( SELECT auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto FROM auto) as t where especificacion.especificacion='Año' or especificacion.especificacion='Transmision' or especificacion.especificacion='Kilometraje' or especificacion.especificacion='Caballos de fuerza') order by auto.id_auto)
+
+        UNION
+
+        (select auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto,descripcion_especificcacion.descripcion,especificacion.especificacion from auto left join descripcion_especificcacion on auto.id_auto=descripcion_especificcacion.id_auto left join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion where auto.id_auto not in(select descripcion_especificcacion.id_auto from descripcion_especificcacion inner join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion where especificacion.especificacion='Año' or especificacion.especificacion='Transmision' or especificacion.especificacion='Kilometraje' or especificacion.especificacion='Caballos de fuerza') GROUP by id_auto)) as t order by id_auto");
+        
+          $oAutos = new \stdClass();
+          $auxId_auto = -1;
+        
+          $oAutos->anio = '';
+          $oAutos->transmision = '';
+          $oAutos->kilometraje = '';
+          $oAutos->caballos_de_fuerza = '';
+        
+          foreach($autos as $auto)
+          {
+               if($auto->id_auto!==$auxId_auto && $auxId_auto!==-1)
+              {
+                  array_push($aAutos,$oAutos);
+                  $oAutos = new \stdClass();
+
+                  $oAutos->anio = '';
+                  $oAutos->transmision = '';
+                  $oAutos->kilometraje = '';
+                  $oAutos->caballos_de_fuerza = '';
+              }
+              
+              $auxId_auto = $auto->id_auto;
+              $oAutos->nombre = $auto->marca.' '.$auto->modelo;
+              $oAutos->precio = $auto->precio;
+              $oAutos->foto = $auto->foto;
+              
+             
+              if($auto->especificacion=='Año')
+              {
+                   $oAutos->anio = $auto->descripcion;
+              }
+              else
+              {
+                  if($auto->especificacion=='Transmision')
+                  {
+                      $oAutos->transmision = $auto->descripcion;
+                  }
+                  else
+                  {
+                       if($auto->especificacion=='Kilometraje')
+                       {
+                            $oAutos->kilometraje = $auto->descripcion;
+                       }
+                      else
+                      {
+                         if($auto->especificacion=='Caballos de fuerza')
+                         {
+                                $oAutos->caballos_de_fuerza = $auto->descripcion;
+                         } 
+                      }
+                  }
+              }
+              if($auto === end($autos))
+              {
+                    array_push($aAutos,$oAutos);
+              }
+          }
+          
+		return view('/principal/vehiculos2',compact('aAutos'));
+    }
+    
+    
+    
+    
+    
     public function mostrar_unico_carro()
     {
 

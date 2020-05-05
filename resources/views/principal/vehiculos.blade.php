@@ -62,8 +62,8 @@
         <div class="row sorting-options">
           <div class="col-md-5">
            <div class="change-view-button">
-             <a href="listing-01.html"> <i class="fa fa-th"></i> </a>
-             <a class="active" href="#"> <i class="fa fa-list-ul"></i> </a>
+             <a href="/vehiculos2"> <i class="fa fa-th"></i> </a>
+             <a class="active" href="/vehiculos"> <i class="fa fa-list-ul"></i> </a>
            </div>
           </div> 
          <div class="col-md-3 text-right">
