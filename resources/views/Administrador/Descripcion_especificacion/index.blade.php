@@ -1,9 +1,8 @@
-
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-  <title>Lista de Autos</title>
+  <title>Lista de descripcion e especificaciones</title>
 
 </head>
 
@@ -17,27 +16,24 @@
       <table  id="table_id"class="table table-condensed table-striped table-bordered" style="width:auto">
           <thead>
           <tr>
-          <th>Marca</th>
-              <th>Modelo</th>
+          <th>Auto</th>
+              <th>Especificacion</th>
              
-              <th>Precio</th>
-              <th>Foto principal</th>
-              <th>Acciones</th>
+              <th>Descripcion</th>
             
           </tr>
           </thead>
           <tbody>
-          @foreach($autos as $auto)
+          @foreach($descripcion as $auto)
               <tr>
-              <td>{{ $auto->marca}}</td>
-                  <td>{{ $auto->modelo}}</td>
+              <td>{{ $auto->carro}}</td>
+                  <td>{{ $auto->especificacion}}</td>
                   
-                  <td>{{ $auto->precio}}</td>
-                  <td> <img src='{{ $auto->foto}}'></td>
+                  <td>{{ $auto->descripcion}}</td>
                   <td>
-                  
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-id="<?php echo $auto->id_auto;?>"  data-modelo="<?php echo $auto->modelo;?>">Eliminar</button>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-marca="<?php echo $auto->marca;?>" data-modelo="<?php echo $auto->modelo;?>"  data-precio="<?php echo $auto->precio;?>" data-foto="<?php echo $auto->foto;?>"data-id="<?php echo $auto->id_auto;?>">Editar</button>
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-id="<?php echo $auto->id_auto;?>"  data-id2="<?php echo $auto->id_especificacion;?>" data-carro="<?php echo $auto->carro;?>" data-especificacion="<?php echo $auto->especificacion;?>">Eliminar</button>
+                      
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-descripcion="<?php echo $auto->descripcion;?>"   data-id="<?php echo $auto->id_auto;?>" data-id2="<?php echo $auto->id_especificacion;?>">Editar</button>
                   </td>
 
               </tr>
@@ -48,23 +44,25 @@
 </div>
 
 
+
 <!--model eliminar -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
  <div class="modal-dialog" role="document">
    <div class="modal-content">
      <div class="modal-header">
-       <h5 class="modal-title" id="deleteModalLabel">Eliminar Auto</h5>
+       <h5 class="modal-title" id="deleteModalLabel">Eliminar Registro</h5>
        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
          <span aria-hidden="true">&times;</span>
        </button>
      </div>
      <div class="modal-body">
-     {{ Form::open(array('action' => 'AutoController@eliminar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
+     {{ Form::open(array('action' => 'Descripcion_especificacionController@eliminar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
          <div class="form-group">
            <label for="recipient-name" class="col-form-label">¿Seguro que desea eliminar el registro?</label>
          </div>
          <div class="modal-footer">
          {{ Form::hidden('id_show') }}
+         {{ Form::hidden('id_show2') }}
        {!! Form::submit( 'Si', ['class' => 'btn btn-danger', 'name' => 'submitbutton', 'value' => 'login'])!!}
        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
        </div>
@@ -80,76 +78,81 @@
  <div class="modal-dialog" role="document">
    <div class="modal-content">
      <div class="modal-header">
-       <h5 class="modal-title" id="insertModalLabel">Ingresar Nuevo Auto</h5>
+       <h5 class="modal-title" id="insertModalLabel">Insertar Nuevo Registro</h5>
        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
          <span aria-hidden="true">&times;</span>
        </button>
      </div>
      <div class="modal-body">
-    
+     <?php
+           $query = "select * from especificacion ";
 
-     {{ Form::open(array('action' => 'AutoController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
+       $data=DB::select($query);
+         
+       $query2 = "select concat(auto.marca,' ',auto.modelo)as nombre,auto.id_auto from auto ";
+
+       $data2=DB::select($query2);
+
+       ?>
+
+     {{ Form::open(array('action' => 'Descripcion_especificacionController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
+
+         
+       
          <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Marca:</label>
-           {{ Form::text('marca_show', '', array('id' => 'marca_show',  'placeholder' => 'Marca del auto','required' => 'required')) }}
+           <label for="recipient-name" class="col-form-label">Autos:</label>
+           <select class="form-control" name="auto_show" required>
+           <option value="" disabled selected>Elige un auto</option>
+           @foreach ($data2 as $item)
+           <option value="{{ $item->id_auto }}" > {{ $item->nombre }} </option>
+           @endforeach    </select>
          </div>
+         
          <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Modelo:</label>
-           {{ Form::text('modelo_show', '', array('id' => 'modelo_show',  'placeholder' => 'Modelo del auto','required' => 'required')) }}
+           <label for="recipient-name" class="col-form-label">Especificaciones:</label>
+           <select class="form-control" name="especificacion_show" required>
+           <option value="" disabled selected>Elige una especificaicon</option>
+           @foreach ($data as $item)
+           <option value="{{ $item->id_especificacion }}" > {{ $item->especificacion }} </option>
+           @endforeach    </select>
          </div>
+         
          <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Precio:</label>
-           {{ Form::text('precio_show', '', array('id' => 'precio_show',  'placeholder' => 'Precio del auto','required' => 'required')) }}
+           <label for="recipient-name" class="col-form-label">Descripcion:</label>
+         {!! Form::textarea('descripcion_show', null, ['id' => 'descripcion_show', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','required' => 'required']) !!}
          </div>
-        <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Foto:</label>
-           {{ Form::text('foto_show', '', array('id' => 'foto_show',  'placeholder' => 'Foto del auto','required' => 'required')) }}
-         </div>
-        
+
+
          <div class="modal-footer">
        {!! Form::submit( 'Insertar', ['class' => 'btn btn-primary', 'name' => 'submitbutton', 'value' => 'login'])!!}
        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
        </div>
        {{ Form::close() }}
-         
      </div>
    </div>
  </div>
 </div>
-
 
 <!-- model editar -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog"  aria-labelledby="editModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title" id="editModalLabel">Editar Auto</h5>
+      <h5 class="modal-title" id="editModalLabel">Editar Registro</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
-      {{ Form::open(array('action' => 'AutoController@actualizar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
+      {{ Form::open(array('action' => 'Descripcion_especificacionController@actualizar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
         <div class="form-group">
-          <label for="recipient-name" class="col-form-label">Marca:</label>
-           {{ Form::text('marca_show', '', array('id' => 'marca_show',  'placeholder' => 'Marca del auto','required' => 'required')) }}
            {{ Form::hidden('id_show', '', array('id' => 'id_show',  'placeholder' => 'Id')) }}
-        </div>
-        <div class="form-group">
-          <label for="recipient-name" class="col-form-label">Modelo:</label>
-           {{ Form::text('modelo_show', '', array('id' => 'modelo_show',  'placeholder' => 'Modelo del auto' ,'required' => 'required')) }}
-           
+            {{ Form::hidden('id_show2', '', array('id' => 'id_show2',  'placeholder' => 'Id')) }}
         </div>
          <div class="form-group">
-          <label for="recipient-name" class="col-form-label">Precio:</label>
-           {{ Form::text('precio_show', '', array('id' => 'precio_show',  'placeholder' => 'Precio del auto' ,'required' => 'required')) }}
-           
-        </div>
-        <div class="form-group">
-          <label for="recipient-name" class="col-form-label">Foto:</label>
-           {{ Form::text('foto_show', '', array('id' => 'foto_show',  'placeholder' => 'Foto del auto' ,'required' => 'required')) }}
-           
-        </div>
+           <label for="recipient-name" class="col-form-label">Descripcion:</label>
+         {!! Form::textarea('descripcion_show', null, ['id' => 'descripcion_show', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','required' => 'required']) !!}
+         </div>
 
         <div class="modal-footer">
       {!! Form::submit( 'Actualizar', ['class' => 'btn btn-primary', 'name' => 'submitbutton', 'value' => 'login'])!!}
@@ -160,8 +163,6 @@
   </div>
 </div>
 </div>
-
-
 
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -175,18 +176,18 @@
 
 $('#editModal').on('show.bs.modal', function (event) {
 var button = $(event.relatedTarget)
-var id = button.data('id')
-var marca=button.data('marca')
-var modelo=button.data('modelo');
-var precio=button.data('precio');
-var foto=button.data('foto');
+var id_auto = button.data('id')
+var id_especificacion = button.data('id2')
+var descripcion=button.data('descripcion')
+
+
 
 var modal = $(this)
-modal.find('#id_show').val(id)
-modal.find('#marca_show').val(marca)
-modal.find('#modelo_show').val(modelo)
-modal.find('#precio_show').val(precio)
-modal.find('#foto_show').val(foto)
+modal.find('#id_show').val(id_auto)
+modal.find('#id_show2').val(id_especificacion)
+modal.find('#descripcion_show').val(descripcion)
+
+
 });
 
 $(document).ready(function() {
@@ -247,10 +248,13 @@ $(document).ready(function() {
 $('#deleteModal').on('show.bs.modal', function (event) {
  var button = $(event.relatedTarget)
  var id = button.data('id')
- var modelo=button.data('modelo')
+ var id2 = button.data('id2')
+ var carro=button.data('carro')
+ var especificacion=button.data('especificacion')
  var modal = $(this)
- modal.find('.col-form-label').text('¿Esta seguro que desea eliminar el registro: ' +modelo+'?')
+ modal.find('.col-form-label').text('¿Esta seguro que desea eliminar el auto: ' +carro+' con su especificacion: '+ especificacion+'?')
  document.forms[0].id_show.value=id
+ document.forms[0].id_show2.value=id2
 });
 
 </script>
