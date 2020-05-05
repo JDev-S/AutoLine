@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','AutoController@mostrar_autos_index');
 
-Route::get('/vehiculos', function () {
-    return view('/principal/vehiculos');
-});
+Route::get('/vehiculos','AutoController@mostrar_autos');
 
 Route::get('/vehiculo', function () {
     return view('/principal/vehiculo');

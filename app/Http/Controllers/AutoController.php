@@ -155,8 +155,6 @@ class AutoController extends Controller
               }
           }
           
-          print_r($aAutos);
-          die();
 		return view('/principal/vehiculos',compact('aAutos'));
     }
     

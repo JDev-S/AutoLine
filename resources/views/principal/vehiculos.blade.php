@@ -92,12 +92,13 @@
         </div>
         </div>
         </div>
+          @foreach($aAutos as $auto)
         <div class="car-grid">
            <div class="row">
             <div class="col-lg-4 col-md-12">
               <div class="car-item gray-bg text-center">
                <div class="car-image">
-                 <img class="img-fluid" src="/images/01.jpg" alt="">
+                 <img class="img-fluid" src='{{$auto->foto}}' alt="">
                  <div class="car-overlay-banner">
                   <ul> 
                     <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -110,26 +111,26 @@
               <div class="col-lg-8 col-md-12">
                 <div class="car-details">
                 <div class="car-title">
-                 <a href="#">Acura Rsx</a>
+                 <a href="#">{{$auto->nombre}}</a>
                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam repellendus non voluptate. Harum blanditiis ullam deleniti.</p>
                   </div>
                   <div class="price">
-                       <span class="old-price">$35,568</span>
-                       <span class="new-price">$32,698 </span>
+                       <span class="new-price">${{$auto->precio}} </span>
                        <a class="button red float-right" href="/vehiculo">Details</a>
                      </div>
                    <div class="car-list">
                      <ul class="list-inline">
-                       <li><i class="fa fa-registered"></i> 2016</li>
-                       <li><i class="fa fa-cog"></i> Manual </li>
-                       <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
+                       <li><i class="fa fa-registered"></i> {{$auto->anio}}</li>
+                       <li><i class="fa fa-cog"></i>{{$auto->transmision}} </li>
+                       <li><i class="fa fa-shopping-cart"></i> {{$auto->kilometraje}}</li>
                      </ul>
                    </div>
                   </div>
                 </div>
                </div>
              </div>
-             <div class="car-grid">
+          @endforeach
+            <!--<div class="car-grid">
            <div class="row">
             <div class="col-lg-4 col-md-12">
               <div class="car-item gray-bg text-center">
@@ -165,8 +166,8 @@
                   </div>
                 </div>
                </div>
-             </div>
-             <div class="car-grid">
+             </div>-->
+             <!--<div class="car-grid">
            <div class="row">
             <div class="col-lg-4 col-md-12">
               <div class="car-item gray-bg text-center">
@@ -202,8 +203,8 @@
                   </div>
                 </div>
                </div>
-             </div>
-             <div class="car-grid">
+             </div>-->
+             <!--<div class="car-grid">
            <div class="row">
             <div class="col-lg-4 col-md-12">
               <div class="car-item gray-bg text-center">
@@ -239,7 +240,7 @@
                   </div>
                 </div>
                </div>
-             </div>
+             </div>-->
            <div class="pagination-nav d-flex justify-content-center">
                <ul class="pagination">
                  <li><a href="#">«</a></li>
