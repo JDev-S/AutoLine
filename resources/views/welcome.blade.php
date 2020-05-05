@@ -378,7 +378,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="row">
        <div class="col-lg-6 col-md-12">
          <div class="text-lg-left text-center">
-         <p>©Copyright 2020 AUTOLINE Desarrollado por <a href="https://jdevs.com.mx/" target="_blank">JDev-S</a></p>
+         <p>©Copyright <?php
+                        $fecha = date('Y');
+                        echo $fecha;?> 
+         AUTOLINE Desarrollado por <a href="https://jdevs.com.mx/" target="_blank">JDev-S</a></p>
        </div>
       </div>
       <div class="col-lg-6 col-md-12">

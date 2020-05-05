@@ -27,11 +27,12 @@
           @foreach($fotos as $auto)
               <tr>
               <td>{{ $auto->carro}}</td>
-                  <td><img src="{{ $auto->foto}}"></td>
+              <td><img src="{{ $auto->foto}}"></td>
                   <td>
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-id="<?php echo $auto->id_foto;?>" data-foto="<?php echo $auto->foto;?>">Eliminar</button>
                       
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-descripcion="<?php echo $auto->descripcion;?>"   data-id="<?php echo $auto->id_auto;?>" data-id2="<?php echo $auto->id_especificacion;?>">Editar</button>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-foto="<?php echo $auto->foto;?>"   data-id="<?php echo $auto->id_foto;?>">Editar</button>
+
                   </td>
 
               </tr>
@@ -54,13 +55,12 @@
        </button>
      </div>
      <div class="modal-body">
-     {{ Form::open(array('action' => 'Descripcion_especificacionController@eliminar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
+     {{ Form::open(array('action' => 'Fotos_autoController@eliminar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
          <div class="form-group">
            <label for="recipient-name" class="col-form-label">¿Seguro que desea eliminar el registro?</label>
          </div>
          <div class="modal-footer">
          {{ Form::hidden('id_show') }}
-         {{ Form::hidden('id_show2') }}
        {!! Form::submit( 'Si', ['class' => 'btn btn-danger', 'name' => 'submitbutton', 'value' => 'login'])!!}
        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
        </div>
@@ -83,22 +83,19 @@
      </div>
      <div class="modal-body">
      <?php
-           $query = "select * from especificacion ";
-
-       $data=DB::select($query);
-         
+           
        $query2 = "select concat(auto.marca,' ',auto.modelo)as nombre,auto.id_auto from auto ";
 
        $data2=DB::select($query2);
 
        ?>
 
-     {{ Form::open(array('action' => 'Descripcion_especificacionController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
+     {{ Form::open(array('action' => 'Fotos_autoController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
 
          
        
          <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Autos:</label>
+           <label for="recipient-name" class="col-form-label">Fotos de los autos:</label>
            <select class="form-control" name="auto_show" required>
            <option value="" disabled selected>Elige un auto</option>
            @foreach ($data2 as $item)
@@ -107,17 +104,8 @@
          </div>
          
          <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Especificaciones:</label>
-           <select class="form-control" name="especificacion_show" required>
-           <option value="" disabled selected>Elige una especificaicon</option>
-           @foreach ($data as $item)
-           <option value="{{ $item->id_especificacion }}" > {{ $item->especificacion }} </option>
-           @endforeach    </select>
-         </div>
-         
-         <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Descripcion:</label>
-         {!! Form::textarea('descripcion_show', null, ['id' => 'descripcion_show', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','required' => 'required']) !!}
+           <label for="recipient-name" class="col-form-label">Imagen del auto:</label>
+         {!! Form::textarea('foto_show', null, ['id' => 'foto_show', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','required' => 'required']) !!}
          </div>
 
 
@@ -130,7 +118,7 @@
    </div>
  </div>
 </div>
-
+    
 <!-- model editar -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog"  aria-labelledby="editModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
@@ -142,14 +130,14 @@
       </button>
     </div>
     <div class="modal-body">
-      {{ Form::open(array('action' => 'Descripcion_especificacionController@actualizar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
+      {{ Form::open(array('action' => 'Fotos_autoController@actualizar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
         <div class="form-group">
            {{ Form::hidden('id_show', '', array('id' => 'id_show',  'placeholder' => 'Id')) }}
-            {{ Form::hidden('id_show2', '', array('id' => 'id_show2',  'placeholder' => 'Id')) }}
+            
         </div>
          <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Descripcion:</label>
-         {!! Form::textarea('descripcion_show', null, ['id' => 'descripcion_show', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','required' => 'required']) !!}
+           <label for="recipient-name" class="col-form-label">Foto:</label>
+         {!! Form::textarea('foto_show', null, ['id' => 'foto_show', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','required' => 'required']) !!}
          </div>
 
         <div class="modal-footer">
@@ -162,7 +150,6 @@
 </div>
 </div>
 
-
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
@@ -174,16 +161,14 @@
 
 $('#editModal').on('show.bs.modal', function (event) {
 var button = $(event.relatedTarget)
-var id_auto = button.data('id')
-var id_especificacion = button.data('id2')
-var descripcion=button.data('descripcion')
+var id_foto = button.data('id')
+var foto=button.data('foto')
 
 
 
 var modal = $(this)
-modal.find('#id_show').val(id_auto)
-modal.find('#id_show2').val(id_especificacion)
-modal.find('#descripcion_show').val(descripcion)
+modal.find('#id_show').val(id_foto)
+modal.find('#foto_show').val(foto)
 
 
 });
@@ -246,13 +231,10 @@ $(document).ready(function() {
 $('#deleteModal').on('show.bs.modal', function (event) {
  var button = $(event.relatedTarget)
  var id = button.data('id')
- var id2 = button.data('id2')
- var carro=button.data('carro')
- var especificacion=button.data('especificacion')
+ var foto=button.data('foto')
  var modal = $(this)
- modal.find('.col-form-label').text('¿Esta seguro que desea eliminar el auto: ' +carro+' con su especificacion: '+ especificacion+'?')
+ modal.find('.col-form-label').text('¿Esta seguro que desea eliminar la foto: ' +foto+'?')
  document.forms[0].id_show.value=id
- document.forms[0].id_show2.value=id2
 });
 
 </script>

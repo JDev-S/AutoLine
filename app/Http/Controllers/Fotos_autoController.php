@@ -9,7 +9,7 @@ class Fotos_autoController extends Controller
 {
      public function fotos_autos_mostrar()
 	{
-		fotos=DB::select(' select concat(auto.marca," ",auto.modelo)as carro,auto.id_auto,fotos_auto.foto,fotos_auto.id_foto from auto inner join fotos_auto on fotos_auto.id_foto=auto.id_auto order by auto.id_auto asc');
+		$fotos=DB::select(' select concat(auto.marca," ",auto.modelo)as carro,auto.id_auto,fotos_auto.foto,fotos_auto.id_foto from auto inner join fotos_auto on fotos_auto.id_auto=auto.id_auto order by auto.id_auto asc ');
 		return view('/Administrador/Fotos_auto/index',compact('fotos'));
     }
     
@@ -38,11 +38,9 @@ class Fotos_autoController extends Controller
 	public function insertar(Request $input)
 	{
         $id_auto = $input['auto_show'];
-        $id_especificacion = $input['especificacion_show'];
-        $descripcion = $input['descripcion_show'];
+        $foto = $input['foto_show'];
         
-
-        $query=DB::insert('insert into descripcion_especificcacion (id_especificacion,id_auto,descripcion) values ( ?, ?, ?)', [ $id_especificacion,$id_auto,$descripcion]);
+        $query=DB::insert('insert into fotos_auto (id_foto,foto,id_auto) values ( ?, ?, ?)', [ null,$foto,$id_auto]);
         return redirect()->action('Fotos_autoController@fotos_autos_mostrar')->withInput();
 	
 	}
@@ -54,12 +52,11 @@ class Fotos_autoController extends Controller
 
 	public function actualizar(Request $input)
 	{	    
-		    $id_auto=$input['id_show'];
-            $id_especificacion = $input['id_show2'];
-            $descripcion = $input['descripcion_show'];
+		    $id_foto=$input['id_show'];
+            $foto = $input['foto_show'];
        
-
-        $query=DB::update("update descripcion_especificcacion set descripcion='$descripcion' where id_auto=? and id_especificacion=?",[$id_auto,$id_especificacion]);
+        //UPDATE `fotos_auto` SET `foto` = 'img34' WHERE `fotos_auto`.`id_foto` = 1;
+        $query=DB::update("update fotos_auto set foto='$foto' where id_foto=?",[$id_foto]);
         return redirect()->action('Fotos_autoController@fotos_autos_mostrar')->withInput();
 
 	}

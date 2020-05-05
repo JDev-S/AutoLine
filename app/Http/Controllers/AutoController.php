@@ -77,75 +77,13 @@ class AutoController extends Controller
           }
           
          
-         $autos_finales=DB::select("SELECT * from ((select auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto,descripcion_especificcacion.descripcion,especificacion.especificacion from auto left join descripcion_especificcacion on auto.id_auto=descripcion_especificcacion.id_auto inner join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion WHERE auto.id_auto in ( SELECT auto.id_auto FROM ( SELECT auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto FROM auto) as t where especificacion.especificacion='Año' or especificacion.especificacion='Transmision' or especificacion.especificacion='Kilometraje' or especificacion.especificacion='Caballos de fuerza') order by auto.id_auto)
-
-        UNION
-
-        (select auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto,descripcion_especificcacion.descripcion,especificacion.especificacion from auto left join descripcion_especificcacion on auto.id_auto=descripcion_especificcacion.id_auto left join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion where auto.id_auto not in(select descripcion_especificcacion.id_auto from descripcion_especificcacion inner join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion where especificacion.especificacion='Año' or especificacion.especificacion='Transmision' or especificacion.especificacion='Kilometraje' or especificacion.especificacion='Caballos de fuerza') GROUP by id_auto)) as t where id_auto in (SELECT id_auto from (select * from auto limit 6) as t) order by id_auto");
-        
-          $oAutos_final = new \stdClass();
-          $auxId_auto_final = -1;
-        
-          $oAutos_final->anio = '';
-          $oAutos_final->transmision = '';
-          $oAutos_final->kilometraje = '';
-          $oAutos_final->caballos_de_fuerza = '';
-        
-          foreach($autos_finales as $auto)
-          {
-               if($auto->id_auto!==$auxId_auto_final && $auxId_auto_final!==-1)
-              {
-                  array_push($aAutos_final,$oAutos_final);
-                  $oAutos_final = new \stdClass();
-
-                  $oAutos_final->anio = '';
-                  $oAutos_final->transmision = '';
-                  $oAutos_final->kilometraje = '';
-                  $oAutos_final->caballos_de_fuerza = '';
-              }
-              
-              $auxId_auto_final = $auto->id_auto;
-              $oAutos_final->nombre = $auto->marca.' '.$auto->modelo;
-              $oAutos_final->precio = $auto->precio;
-              $oAutos_final->foto = $auto->foto;
-              
-             
-              if($auto->especificacion=='Año')
-              {
-                   $oAutos_final->anio = $auto->descripcion;
-              }
-              else
-              {
-                  if($auto->especificacion=='Transmision')
-                  {
-                      $oAutos_final->transmision = $auto->descripcion;
-                  }
-                  else
-                  {
-                       if($auto->especificacion=='Kilometraje')
-                       {
-                            $oAutos_final->kilometraje = $auto->descripcion;
-                       }
-                      else
-                      {
-                         if($auto->especificacion=='Caballos de fuerza')
-                         {
-                                $oAutos_final->caballos_de_fuerza = $auto->descripcion;
-                         } 
-                      }
-                  }
-              }
-              if($auto === end($autos_finales))
-              {
-                    array_push($aAutos_final,$oAutos_final);
-              }
-          }
+         
           
          // print_r($aAutos_final);
         //  die();
           
           
-		return view('/principal/index',compact('aAutos','aAutos_final'));
+		return view('/principal/index',compact('aAutos'));
     }
     
     

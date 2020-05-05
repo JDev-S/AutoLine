@@ -61,7 +61,7 @@
     <div class="col-md-12">
       <div class="section-title">
         
-         <h2>Carros  registrados inicialmente</h2>
+         <h2>Ultimos carros añadidos</h2>
          <div class="separator"></div>
       </div>
     </div>
@@ -113,36 +113,9 @@
 
 <section class="welcome-3 white-bg page-section-ptb">
   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="content-box-2 car-bg-1">
-            <i class="glyph-icon flaticon-beetle"></i>
-            <a class="title" href="#">Buy a Car</a>
-            <p>We sell perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
-            <a class="link" href="#">read more <i class="fa fa-angle-double-right"></i> </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="content-box-2 car-bg-2">
-            <i class="glyph-icon flaticon-price-tag"></i>
-            <a class="title" href="#">Sell My Car</a>
-            <p>You can sell sed ut unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
-            <a class="link" href="#">read more <i class="fa fa-angle-double-right"></i> </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="content-box-2 car-bg-3">
-            <i class="glyph-icon flaticon-reparation"></i>
-            <a class="title" href="#">Get Service</a>
-            <p>We provide sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
-            <a class="link" href="#">read more <i class="fa fa-angle-double-right"></i> </a>
-        </div>
-      </div>
-    </div>
     <div class="row about custom-block-2">
       <div class="col-md-6">
-        <h2>About us </h2>
-        <span>Everything you need to build an amazing dealership website. </span> 
+        <h2>Acerca de</h2> 
         <p>Car Dealer is the best premium HTML5 Template. We provide everything you need to build an <b>Amazing dealership website </b> developed especially for car sellers, dealers or auto motor retailers. You can use this template for creating website based on any framework and any language </p>
       </div>
       <div class="col-md-6">
@@ -199,60 +172,7 @@
 </section>
 
 
-<section class="feature-car gray-bg page-section-ptb">
-  <div class="container">
-   <div class="row">
-    <div class="col-md-12">
-      <div class="section-title">
-        
-         <h2>Ultimos carros añadidos</h2>
-         <div class="separator"></div>
-      </div>
-    </div>
-   </div>
- <div class="row">
-  <div class="col-md-12">
-   <div class="owl-carousel owl-theme" data-nav-dots="true" data-items="3" data-md-items="3" data-sm-items="2" data-xs-items="1" data-space="15">
 
-@foreach($aAutos_final as $auto)
- <div class="item">
-       <div class="car-item-2 text-center">
-         <div class="car-image">
-           <img class="img-fluid" src="{{$auto->foto}}}" alt="">
-           <div class="car-overlay-banner">
-            <ul> 
-              <li><a href="#"><i class="fa fa-link"></i></a></li>
-              <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
-             </ul>
-           </div>
-         </div>
-         <div class="car-content">
-          <a href="#">{{$auto->nombre}}</a>
-          <div class="car-list">
-           <ul class="list-inline">
-             <li>{{$auto->anio}}</li>
-             <li>{{$auto->transmision}}</li>
-             <li>{{$auto->caballos_de_fuerza}}</li>
-             <li>{{$auto->kilometraje}}</li>
-           </ul>
-           </div>
-           <div class="info"> 
-             <p>You will begin to realize why this exercise Pattern is called the Dickens with to ghost.</p>
-           </div>
-           <div class="price">
-             
-             <span class="new-price">{{$auto->precio}} </span>
-           </div>
-         </div>
-       </div>
-     </div>
-@endforeach
-       
-    </div>
-   </div>
-  </div>
-  </div>
-</section>  
 @stop
  <!--=================================
  Newsletter -->
