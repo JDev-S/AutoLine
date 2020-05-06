@@ -1,4 +1,34 @@
-@extends('welcome')           
+@extends('welcome')
+@section('head')
+<?php
+ $paginacion= $numero_autos[0]->numero_autos/7;
+                   $paginacion=ceil($paginacion); 
+                    if($pagina==1)
+                    {
+                       echo '<meta name="robots" content="index, follow" />';
+                        echo'<link rel="next" href="/vehiculos/'.($pagina+1).'">';
+                    }
+                    else
+                    {
+                        echo '<meta name="robots" content="noindex, follow" />';
+                        if($pagina>$paginacion)
+                       {
+                         
+                           echo'<link rel="prev" href="/vehiculos/'.$paginacion.'">';
+                       }
+                       else
+                       {
+                           
+                           echo'<link rel="prev" href="/vehiculos/'.($pagina-1).'">';
+                       }
+                    }
+                     if($pagina<$paginacion && $pagina!=1)
+                   {
+                       
+                       echo'<link rel="next" href="/vehiculos/'.($pagina+1).'">';
+                   }
+?>
+@stop
 @section('contenido')
 
 <div id="rev_slider_3_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="car-dealer-05" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
@@ -102,7 +132,6 @@
                 <div class="car-details">
                 <div class="car-title">
                  <a href="#">{{$auto->nombre}}</a>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam repellendus non voluptate. Harum blanditiis ullam deleniti.</p>
                   </div>
                   <div class="price">
                        <span class="new-price">${{$auto->precio}} </span>
@@ -233,18 +262,47 @@
              </div>-->
            <div class="pagination-nav d-flex justify-content-center">
                <ul class="pagination">
-                <li><a href="#">«</a></li>
-                <li class="active"><a href="/vehiculos?pagina=1">1</a></li>
-               <?php
+                   <?php
                    $paginacion= $numero_autos[0]->numero_autos/7;
-                   $paginacion=ceil($paginacion);
-
-                   for($i=2;$i<=ceil($numero_autos[0]->numero_autos/7);$i++)
+                   $paginacion=ceil($paginacion); 
+                   
+                   if($pagina>1)
                    {
-                     echo'<li><a  href="/vehiculos/'.$i.'">'.$i.'</a></li>';
+                       if($pagina>$paginacion)
+                       {
+                           echo'<li><a href="/vehiculos/'.$paginacion.'">«</a></li>';
+                       }
+                       else
+                       {
+                           echo'<li><a href="/vehiculos/'.($pagina-1).'">«</a></li>';
+                       }
+                       
+                   }                
+                
+
+               
+                   
+
+                   for($i=1;$i<=ceil($numero_autos[0]->numero_autos/7);$i++)
+                   {
+                       if($i==$pagina)
+                       {
+                           echo'<li class="active"><a  href="/vehiculos/'.$i.'">'.$i.'</a></li>';
+                           
+                       }
+                       else
+                       {
+                           echo'<li><a  href="/vehiculos/'.$i.'">'.$i.'</a></li>';
+                       }
+                     
                    }
-               ?>
-             <li><a href="#">»</a></li>
+                    
+                   if($pagina<$paginacion)
+                   {
+                       echo'<li><a href="/vehiculos/'.($pagina+1).'">»</a></li>';
+                   }
+                  
+                   ?>
              </ul>
           </div>
           </div>

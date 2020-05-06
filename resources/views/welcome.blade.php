@@ -52,8 +52,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-557RCPW');</script>
 <!-- End Google Tag Manager -->
-
+@yield('head')
 </head>
+    
 
 <body>
 
@@ -150,7 +151,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <li><a href="index-landing-page.html">landing page</a></li>
                 </ul>-->
             </li>
-            <li><a href="/vehiculos/1">Vehículos </a>
+            <li><a href="/vehiculos">Vehículos </a>
                 <!-- drop down full width -->
                 <!--<div class="drop-down menu-bg grid-col-12">
                     
