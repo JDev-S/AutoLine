@@ -150,7 +150,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <li><a href="index-landing-page.html">landing page</a></li>
                 </ul>-->
             </li>
-            <li><a href="/vehiculos">Vehículos </a>
+            <li><a href="/vehiculos/1">Vehículos </a>
                 <!-- drop down full width -->
                 <!--<div class="drop-down menu-bg grid-col-12">
                     

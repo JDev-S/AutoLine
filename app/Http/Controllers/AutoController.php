@@ -86,16 +86,22 @@ class AutoController extends Controller
 		return view('/principal/index',compact('aAutos'));
     }
     
-    public function mostrar_autos()
+    
+    
+    public function mostrar_autos($pagina)
     {
         $aAutos = array();
         $aAutos_final=array();
+        $numero_autos=DB::select('select count(*)as numero_autos from auto');
+
+        $max=7*$pagina;
+        $minimo=$max-7;
 
 		$autos=DB::select("SELECT * from ((select auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto,descripcion_especificcacion.descripcion,especificacion.especificacion from auto left join descripcion_especificcacion on auto.id_auto=descripcion_especificcacion.id_auto inner join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion WHERE auto.id_auto in ( SELECT auto.id_auto FROM ( SELECT auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto FROM auto) as t where especificacion.especificacion='Año' or especificacion.especificacion='Transmision' or especificacion.especificacion='Kilometraje' or especificacion.especificacion='Caballos de fuerza') order by auto.id_auto)
 
         UNION
 
-        (select auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto,descripcion_especificcacion.descripcion,especificacion.especificacion from auto left join descripcion_especificcacion on auto.id_auto=descripcion_especificcacion.id_auto left join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion where auto.id_auto not in(select descripcion_especificcacion.id_auto from descripcion_especificcacion inner join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion where especificacion.especificacion='Año' or especificacion.especificacion='Transmision' or especificacion.especificacion='Kilometraje' or especificacion.especificacion='Caballos de fuerza') GROUP by id_auto)) as t order by id_auto");
+        (select auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto,descripcion_especificcacion.descripcion,especificacion.especificacion from auto left join descripcion_especificcacion on auto.id_auto=descripcion_especificcacion.id_auto left join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion where auto.id_auto not in(select descripcion_especificcacion.id_auto from descripcion_especificcacion inner join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion where especificacion.especificacion='Año' or especificacion.especificacion='Transmision' or especificacion.especificacion='Kilometraje' or especificacion.especificacion='Caballos de fuerza') GROUP by id_auto)) as t where id_auto in (SELECT id_auto from (select * from auto limit $minimo,$max) as t) order by id_auto");
         
           $oAutos = new \stdClass();
           $auxId_auto = -1;
@@ -154,9 +160,20 @@ class AutoController extends Controller
                     array_push($aAutos,$oAutos);
               }
           }
+        
           
-		return view('/principal/vehiculos',compact('aAutos'));
+		return view('/principal/vehiculos',compact('aAutos','numero_autos'));
     }
+    
+    
+    public function prueba_ajax(Request $input)
+    {
+        print_r($request);
+        die();
+        return view('/principal/vehiculo');
+    }
+    
+    
     
         public function mostrar_autos2()
     {
