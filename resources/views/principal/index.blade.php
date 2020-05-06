@@ -61,7 +61,7 @@
     <div class="col-md-12">
       <div class="section-title">
         
-         <h2>Ultimos carros añadidos</h2>
+         <h2>Últimos carros añadidos</h2>
          <div class="separator"></div>
       </div>
     </div>
