@@ -130,7 +130,7 @@
     </div>
     <div class="row">
       <div class="col-md-3">
-        <div class="feature-box-2 box-hover active">
+        <div class="feature-box-2 box-hover">
          <div class="icon">
            <i class="glyph-icon flaticon-beetle"></i>
          </div> 
