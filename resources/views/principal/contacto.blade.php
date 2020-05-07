@@ -73,13 +73,9 @@
             <div class="opening-hours gray-bg">
                 <h6>Horarios</h6>
                 <ul class="list-style-none">
-                  <li><strong>Domingo</strong> <span class="text-red"> closed</span></li>
-                  <li><strong>Lunes</strong> <span> 9:00 AM to 9:00 PM</span></li>
-                  <li><strong>Martes </strong> <span> 9:00 AM to 9:00 PM</span></li>
-                  <li><strong>Miércoles </strong> <span> 9:00 AM to 9:00 PM</span></li>
-                  <li><strong>Jueves </strong> <span> 9:00 AM to 9:00 PM</span></li>
-                  <li><strong>Viernes </strong> <span> 9:00 AM to 9:00 PM</span></li>
-                  <li><strong>Sábado </strong> <span> 9:00 AM to 9:00 PM</span></li>
+                  @foreach($autos as $auto)  
+                  <li><strong>{{$auto->dia}}</strong> <span > {{$auto->horas}}</span></li>
+                  @endforeach
                 </ul>
               </div>
          </div>

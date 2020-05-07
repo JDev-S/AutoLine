@@ -11,9 +11,9 @@ class EmailController extends Controller
     public function contact(Request $request){
         /*MENSAJE PARA NOSOTROS*/
         $subject = $request['categoria'];
-        $for = "info@jdevs.com.mx";
+        $for = "juanjesuspadrondiaz@gmail.com";
         Mail::send('/principal/correo_contacto',$request->all(), function($msj) use($subject,$for){
-            $msj->from("info@jdevs.com.mx","JDev-S");
+            $msj->from("juanjesuspadrondiaz@gmail.com");
             $msj->subject($subject);
             $msj->to($for);
         });

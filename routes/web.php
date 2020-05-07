@@ -21,9 +21,11 @@ Route::get('/vehiculos2/{pagina?}','AutoController@mostrar_autos2');
 
 Route::get('/vehiculo/{id_auto}','AutoController@mostrar_unico_carro');
 
-Route::get('/contacto', function () {
+/*Route::get('/contacto', function () {
     return view('/principal/contacto');
-});
+});*/
+
+Route::get('/contacto','HorarioController@mostrar_horario');
 
 /*Admin en Auto*/
 Route::get('/Admin_auto','AutoController@autos_mostrar');
@@ -79,6 +81,13 @@ Route::post('/Admin_fotos_autos_nuevo','Fotos_autoController@insertar');
 
 Route::get('/Admin_fotos_autos_editar','Fotos_autoController@fotos_autos_editar');
 Route::post('/Admin_fotos_autos_editar','Fotos_autoController@actualizar');
+/////////////////////////////////////////////////////////////////////77
+/////////////////////////////////////////////////////////////////////77
+/*Admin en Horario*/
+Route::get('/Admin_horario','HorarioController@horario_mostrar');
+
+Route::get('/Admin_horario_editar','HorarioController@horario_editar');
+Route::post('/Admin_horario_editar','HorarioController@actualizar');
 /////////////////////////////////////////////////////////////////////77
 /*Mandar correo desde contacto*/
 Route::post('/contactar', 'EmailController@contact')->name('contact');
