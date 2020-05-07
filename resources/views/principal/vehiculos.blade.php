@@ -131,7 +131,7 @@
               <div class="col-lg-8 col-md-12">
                 <div class="car-details">
                 <div class="car-title">
-                 <a href="#">{{$auto->nombre}}</a>
+                 <a href='/vehiculo/{{$auto->id_auto}}'>{{$auto->nombre}}</a>
                   </div>
                   <div class="price">
                        <span class="new-price">${{$auto->precio}} </span>

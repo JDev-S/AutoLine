@@ -52,6 +52,9 @@
 <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> </div>
 </div>
 
+   
+
+
 <section class="feature-car gray-bg page-section-ptb">
   <div class="container">
    <div class="row">
@@ -65,13 +68,21 @@
    </div>
  <div class="row">
   <div class="col-md-12">
-   <div class="owl-carousel owl-theme" data-nav-dots="true" data-items="3" data-md-items="3" data-sm-items="2" data-xs-items="1" data-space="15">
+      <?php 
+      
+      if ($numero >=3) {
+     echo'   <div class="owl-carousel owl-theme" data-nav-dots="true" data-items="3" data-md-items="3" data-sm-items="2" data-xs-items="1" data-space="15">';
+}  else {
+     echo'   <div class="owl-carousel owl-theme" data-nav-dots="true" data-items="'.$numero.'" data-md-items="'.$numero.'" data-sm-items="2" data-xs-items="1" data-space="15">';
+}
+ ?>
+
 
 @foreach($aAutos as $auto)
  <div class="item">
        <div class="car-item-2 text-center">
          <div class="car-image">
-           <img class="img-fluid" src="{{$auto->foto}}}" alt="">
+           <img class="img-fluid" src='{{$auto->foto}}' alt="imagen_auto" width="450px;" height="321px;">
            <div class="car-overlay-banner">
             <ul> 
               <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -80,7 +91,7 @@
            </div>
          </div>
          <div class="car-content">
-          <a href="#">{{$auto->nombre}}</a>
+          <a href='/vehiculo/{{$auto->id_auto}}'>{{$auto->nombre}}</a>
           <div class="car-list">
            <ul class="list-inline">
              <li>{{$auto->anio}}</li>
@@ -88,9 +99,6 @@
              <li>{{$auto->caballos_de_fuerza}}</li>
              <li>{{$auto->kilometraje}}</li>
            </ul>
-           </div>
-           <div class="info"> 
-             <p>You will begin to realize why this exercise Pattern is called the Dickens with to ghost.</p>
            </div>
            <div class="price">
              
@@ -104,6 +112,7 @@
     </div>
    </div>
   </div>
+
   </div>
 </section>   
 

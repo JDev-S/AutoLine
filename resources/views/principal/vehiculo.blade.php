@@ -5,18 +5,11 @@
 <!-- START REVOLUTION SLIDER 5.3.0.2 fullwidth mode -->
   <div id="rev_slider_3_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.0.2">
 <ul>  <!-- SLIDE  -->
-    <li data-index="rs-3" data-transition="random-static,random-premium,random" data-slotamount="default,default,default,default" data-hideafterloop="0" data-hideslideonmobile="off"  data-randomtransition="on" data-easein="default,default,default,default" data-easeout="default,default,default,default" data-masterspeed="default,default,default,default"  data-thumb="/images/100x50_3ecde-01.jpg"  data-rotate="0,0,0,0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+    <li data-index="rs-3" data-transition="random-static,random-premium,random" data-slotamount="default,default,default,default" data-hideafterloop="0" data-hideslideonmobile="off"  data-randomtransition="on" data-easein="default,default,default,default" data-easeout="default,default,default,default" data-masterspeed="default,default,default,default"  data-thumb=""  data-rotate="0,0,0,0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
     <!-- MAIN IMAGE -->
-        <img src="/images/3ecde-01.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+        <img src='{{$oAutos->foto}}'  alt="imagen_auto"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
     <!-- LAYERS -->
 
-
-  </li>
-  <!-- SLIDE  -->
-    <li data-index="rs-4" data-transition="random-static,random-premium,random" data-slotamount="default,default,default,default" data-hideafterloop="0" data-hideslideonmobile="off"  data-randomtransition="on" data-easein="default,default,default,default" data-easeout="default,default,default,default" data-masterspeed="default,default,default,default"  data-thumb="/images/100x50_ac5dd-02.jpg"  data-rotate="0,0,0,0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-    <!-- MAIN IMAGE -->
-        <img src="/images/ac5dd-02.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-    <!-- LAYERS -->
   </li>
 </ul>
 <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> </div>
@@ -97,13 +90,13 @@
         <div class="slider-slick">
           <div class="slider slider-for detail-big-car-gallery">
               @foreach($oAutos->fotos as $auto)
-                <img class="img-fluid" src="/images/{{$auto->foto}}" alt="imagen_auto">
+                <img class="img-fluid" src='{{$auto->foto}}' alt="imagen_auto">
                 
                @endforeach
             </div>
             <div class="slider slider-nav"> 
               @foreach($oAutos->fotos as $auto)
-                <img class="img-fluid" src="/images/{{$auto->foto}}" alt="imagen_auto">
+                <img class="img-fluid" src='{{$auto->foto}}' alt="imagen_auto">
                 
                @endforeach
             </div>
@@ -134,12 +127,19 @@
    <h6>Vehiculos recientes</h6>
     <div class="row">
      <div class="col-md-12">
-       <div class="owl-carousel" data-nav-arrow="true" data-nav-dots="true" data-items="3" data-md-items="3" data-sm-items="2" data-space="15">
-           @foreach($aAutos2 as $auto)
+         <?php 
+      
+      if ($numero >=3) {
+     echo'<div class="owl-carousel" data-nav-arrow="true" data-nav-dots="true" data-items="3" data-md-items="3" data-sm-items="2" data-space="15">';
+}  else {
+     echo'<div class="owl-carousel" data-nav-arrow="true" data-nav-dots="true" data-items="'.$numero.'" data-md-items="'.$numero.'" data-sm-items="2" data-space="15">';
+}
+ ?>
+          @foreach($aAutos2 as $auto)
         <div class="item">
          <div class="car-item gray-bg text-center">
            <div class="car-image">
-             <img class="img-fluid" src='/images/{{$auto->foto}}' alt="">
+             <img class="img-fluid" src='{{$auto->foto}}' alt="">
              <div class="car-overlay-banner">
               <ul> 
                 <li><a href="#"><i class="fa fa-link"></i></a></li>

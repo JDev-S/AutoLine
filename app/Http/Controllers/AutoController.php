@@ -43,6 +43,7 @@ class AutoController extends Controller
               $oAutos->nombre = $auto->marca.' '.$auto->modelo;
               $oAutos->precio = $auto->precio;
               $oAutos->foto = $auto->foto;
+              $oAutos->id_auto = $auto->id_auto;
               
              
               if($auto->especificacion=='Año')
@@ -75,9 +76,9 @@ class AutoController extends Controller
                     array_push($aAutos,$oAutos);
               }
           }
-          
-          
-		return view('/principal/index',compact('aAutos'));
+          $numero= count($aAutos);
+         
+		return view('/principal/index',compact('aAutos','numero'));
     }
     
     
@@ -349,8 +350,9 @@ class AutoController extends Controller
                     array_push($aAutos2,$oAutos2);
               }
           }   
-
-		return view('/principal/vehiculo',compact('oAutos','aAutos2'));
+            
+        $numero= count($aAutos2);
+		return view('/principal/vehiculo',compact('oAutos','aAutos2','numero'));
     }
     
     
