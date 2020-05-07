@@ -52,9 +52,6 @@
 <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> </div>
 </div>
 
-   
-
-
 <section class="feature-car gray-bg page-section-ptb">
   <div class="container">
    <div class="row">

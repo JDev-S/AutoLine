@@ -44,6 +44,7 @@
 <link rel="stylesheet" type="text/css" href="/css/style-customizer.css" />
 <link rel="stylesheet" type="text/css" href="/css/slick.css" />
 <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
+ <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -151,7 +152,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <li><a href="index-landing-page.html">landing page</a></li>
                 </ul>-->
             </li>
-            <li><a href="/vehiculos">Vehículos </a>
+            <li><a href="/vehiculos/1/7">Vehículos </a>
                 <!-- drop down full width -->
                 <!--<div class="drop-down menu-bg grid-col-12">
                     
@@ -425,6 +426,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  jquery -->
 
 <!-- jquery  -->
+   
+ 
 <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="/js/slick.min.js"></script>
 <!-- bootstrap -->
@@ -540,8 +543,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
       }); 
  })(jQuery);
-
+    
 </script>
+ @yield('scripts')
   
 </body>
 </html> 

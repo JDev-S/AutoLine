@@ -23,16 +23,15 @@
 </div>
 
 <section class="car-details page-section-ptb">
+
   <div class="container">
     <div class="row">
      <div class="col-md-9">
-       <h3>Hyundai Santa Fe </h3>
-       <p>Temporibus possimus quasi beatae, You will begin to realize why, consectetur adipisicing elit. aspernatur nemo maiores.</p>
+       <h3>{{$oAutos->nombre}}</h3>
       </div>
      <div class="col-md-3">
       <div class="car-price text-lg-right">
-         <strong>$ 69,995</strong>
-         <span>Plus Taxes & Licensing</span>
+         <strong>${{$oAutos->precio}}</strong>
        </div> 
       </div> 
     </div>
@@ -96,133 +95,51 @@
     <div class="row">
      <div class="col-md-8">
         <div class="slider-slick">
-          <div class="slider slider-for detail-big-car-gallery"> 
-                <img class="img-fluid" src="/images/01.jpg" alt="">
-                <img class="img-fluid" src="/images/02.jpg" alt="">
-                <img class="img-fluid" src="/images/03.jpg" alt="">
-                <img class="img-fluid" src="/images/04.jpg" alt="">
-                <img class="img-fluid" src="/images/05.jpg" alt="">
-                <img class="img-fluid" src="/images/06.jpg" alt="">
-                <img class="img-fluid" src="/images/07.jpg" alt="">
-                <img class="img-fluid" src="/images/08.jpg" alt="">
+          <div class="slider slider-for detail-big-car-gallery">
+              @foreach($oAutos->fotos as $auto)
+                <img class="img-fluid" src="/images/{{$auto->foto}}" alt="imagen_auto">
+                
+               @endforeach
             </div>
             <div class="slider slider-nav"> 
-                <img class="img-fluid" src="/images/01.jpg" alt=""> 
-                <img class="img-fluid" src="/images/02.jpg" alt=""> 
-                <img class="img-fluid" src="/images/03.jpg" alt=""> 
-                <img class="img-fluid" src="/images/04.jpg" alt=""> 
-                <img class="img-fluid" src="/images/05.jpg" alt=""> 
-                <img class="img-fluid" src="/images/06.jpg" alt=""> 
-                <img class="img-fluid" src="/images/07.jpg" alt=""> 
-                <img class="img-fluid" src="/images/08.jpg" alt=""> 
+              @foreach($oAutos->fotos as $auto)
+                <img class="img-fluid" src="/images/{{$auto->foto}}" alt="imagen_auto">
+                
+               @endforeach
             </div>
          </div>
         <div id="tabs">
-          <ul class="tabs">
-             <li data-tabs="tab1" class="active"> <span aria-hidden="true" class="icon-diamond"></span> General Information</li>
-             <li data-tabs="tab2"><span aria-hidden="true" class="icon-list"></span>Features & Options</li>
-             <li data-tabs="tab3"> <span aria-hidden="true" class="icon-equalizer"></span> Vehicle Overview</li>
-           </ul>
-           <div id="tab1" class="tabcontent"> 
-             <h6>consectetur adipisicing elit</h6>   
-             <p>Temporibus possimus quasi beatae, consectetur adipisicing elit. Obcaecati unde molestias sunt officiis aliquid sapiente, numquam, porro perspiciatis neque voluptatem sint hic quam eveniet ad adipisci laudantium corporis ipsam ea!
-             <br /><br />
-             Consectetur adipisicing elit. Dicta, amet quia ad debitis fugiat voluptatem neque dolores tempora iste saepe cupiditate, molestiae iure voluptatibus est beatae? Culpa, illo a You will begin to realize why, consectetur adipisicing elit. Commodi, doloribus, earum modi consectetur molestias asperiores sequi ipsam neque error itaque veniam culpa eligendi similique ducimus nulla, blanditiis, perspiciatis atque saepe! veritatis.
+          
 
-             <br /><br />
-             Adipisicing consectetur elit. Dicta, amet quia ad debitis fugiat voluptatem neque dolores tempora iste saepe cupiditate, molestiae iure voluptatibus est beatae? Culpa, illo a You will begin to realize why, consectetur adipisicing elit. Commodi, doloribus, earum modi consectetur molestias asperiores.
-
-             <br /><br />
-             Voluptatem adipisicing elit. Dicta, amet quia ad debitis fugiat neque dolores tempora iste saepe cupiditate, molestiae iure voluptatibus est beatae? Culpa, illo a You will begin to realize why, consectetur adipisicing elit. Commodi, You will begin to realize why, consectetur adipisicing elit. Laudantium nisi eaque maxime totam, iusto accusantium esse placeat rem at temporibus minus architecto ipsum eveniet. Delectus cum sunt, ea cumque quas! doloribus, earum modi consectetur molestias asperiores sequi ipsam neque error itaque veniam culpa eligendi similique ducimus nulla, blanditiis, perspiciatis atque saepe! veritatis. 
-             </p>
-         </div>
          <div id="tab2" class="tabcontent"> 
-            <h6>consectetur adipisicing elit</h6>   
+            <h6>ESPECIFICACIONES</h6>   
               <table class="table table-bordered">
                  
                 <tbody>
+                    @foreach($oAutos->especificaciones as $auto)
                   <tr>
-                    <th scope="row"> Air conditioning</th>
-                    <td>Mark</td>
+                    <th scope="row"> {{$auto->especificacion}}</th>
+                    <td>{{$auto->descripcion}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row"> Alloy Wheels</th>
-                    <td>Jacob</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"> Anti-Lock Brakes (ABS)</th>
-                    <td>Larry</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"> Anti-Theft</th>
-                    <td>Larry</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Anti-Starter</th>
-                    <td>Larry</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Alloy Wheels</th>
-                    <td>Larry</td>
-                  </tr>
+                    @endforeach
+                 
+                  
+                  
                 </tbody>
               </table>
          </div>
-         <div id="tab3" class="tabcontent"> 
-             <h6>consectetur adipisicing elit</h6>   
-             <p>You will begin to realize why, consectetur adipisicing elit. Obcaecati unde molestias sunt officiis aliquid sapiente, numquam, porro perspiciatis neque voluptatem sint hic quam eveniet ad adipisci laudantium corporis ipsam ea!
-              <br /><br />
-             Adipisicing consectetur elit. Dicta, amet quia ad debitis fugiat voluptatem neque dolores tempora iste saepe cupiditate, molestiae iure voluptatibus est beatae? Culpa, illo a You will begin to realize why, consectetur adipisicing elit. Commodi, doloribus, earum modi consectetur molestias asperiores.
-
-             <br /><br />
-             Voluptatem adipisicing elit. Dicta, amet quia ad debitis fugiat neque dolores tempora iste saepe cupiditate, molestiae iure voluptatibus est beatae? Culpa, illo a You will begin to realize why, consectetur adipisicing elit. Commodi, You will begin to realize why, consectetur adipisicing elit. Laudantium nisi eaque maxime totam, iusto accusantium esse placeat rem at temporibus minus architecto ipsum eveniet. Delectus cum sunt, ea cumque quas! doloribus, earum modi consectetur molestias asperiores sequi ipsam neque error itaque veniam culpa eligendi similique ducimus nulla, blanditiis, perspiciatis atque saepe! veritatis. 
-             </p>
-         </div>
       </div>
-      <div class="extra-feature">
-       <h6> extra feature</h6>
-        <div class="row">
-          <div class="col-lg-4">
-             <ul class="list-style-1">
-               <li><i class="fa fa-check"></i> Security System</li>
-               <li><i class="fa fa-check"></i> Air conditioning</li>
-               <li><i class="fa fa-check"></i> Alloy Wheels</li>
-               <li><i class="fa fa-check"></i> Anti-Lock Brakes (ABS)</li>
-               <li><i class="fa fa-check"></i> Anti-Theft</li>
-               <li><i class="fa fa-check"></i> Anti-Starter </li>
-             </ul>
-          </div>
-          <div class="col-lg-4">
-             <ul class="list-style-1">
-               <li><i class="fa fa-check"></i> Security System</li>
-               <li><i class="fa fa-check"></i> Air conditioning</li>
-               <li><i class="fa fa-check"></i> Alloy Wheels</li>
-               <li><i class="fa fa-check"></i> Anti-Lock Brakes (ABS)</li>
-               <li><i class="fa fa-check"></i> Anti-Theft</li>
-               <li><i class="fa fa-check"></i> Anti-Starter </li>
-             </ul>
-          </div>
-          <div class="col-lg-4">
-             <ul class="list-style-1">
-               <li><i class="fa fa-check"></i> Security System</li>
-               <li><i class="fa fa-check"></i> Air conditioning</li>
-               <li><i class="fa fa-check"></i> Alloy Wheels</li>
-               <li><i class="fa fa-check"></i> Anti-Lock Brakes (ABS)</li>
-               <li><i class="fa fa-check"></i> Anti-Theft</li>
-               <li><i class="fa fa-check"></i> Anti-Starter </li>
-             </ul>
-          </div>
-        </div>
-   </div>
+
   <div class="feature-car">
-   <h6>Recently Vehicle</h6>
+   <h6>Vehiculos recientes</h6>
     <div class="row">
      <div class="col-md-12">
        <div class="owl-carousel" data-nav-arrow="true" data-nav-dots="true" data-items="3" data-md-items="3" data-sm-items="2" data-space="15">
+           @foreach($aAutos2 as $auto)
         <div class="item">
          <div class="car-item gray-bg text-center">
            <div class="car-image">
-             <img class="img-fluid" src="/images/01.jpg" alt="">
+             <img class="img-fluid" src='/images/{{$auto->foto}}' alt="">
              <div class="car-overlay-banner">
               <ul> 
                 <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -232,133 +149,22 @@
            </div>
            <div class="car-list">
              <ul class="list-inline">
-               <li><i class="fa fa-registered"></i> 2016</li>
-               <li><i class="fa fa-cog"></i> Manual </li>
-               <li><i class="fa fa-dashboard"></i> 6,000 mi</li>
+               <li><i class="fa fa-registered"></i>{{$auto->anio}}</li>
+               <li><i class="fa fa-cog"></i>{{$auto->transmision}}</li>
+               <li><i class="fa fa-dashboard"></i>{{$auto->kilometraje}}</li>
              </ul>
           </div>
            <div class="car-content">
-            <div class="star">
-             <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star-o orange-color"></i>
-             </div>
-             <a href="#">Acura Rsx</a>
+             <a href='/vehiculo/{{$auto->id_auto}}'>{{$auto->nombre}}</a>
              <div class="separator"></div>
              <div class="price">
-               <span class="old-price">$35,568</span>
-               <span class="new-price">$32,698 </span>
+               
+               <span class="new-price">${{$auto->precio}} </span>
              </div>
            </div>
          </div>
        </div>
-       <div class="item">
-         <div class="car-item gray-bg text-center">
-           <div class="car-image">
-             <img class="img-fluid" src="/images/02.jpg" alt="">
-             <div class="car-overlay-banner">
-              <ul> 
-                <li><a href="#"><i class="fa fa-link"></i></a></li>
-                <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
-               </ul>
-             </div>
-           </div>
-           <div class="car-list">
-             <ul class="list-inline">
-               <li><i class="fa fa-registered"></i> 2016</li>
-               <li><i class="fa fa-cog"></i> Manual </li>
-               <li><i class="fa fa-dashboard"></i> 6,000 mi</li>
-             </ul>
-          </div>
-           <div class="car-content">
-            <div class="star">
-             <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star-o orange-color"></i>
-             </div>
-             <a href="#">Lexus GS 450h</a>
-             <div class="separator"></div>
-             <div class="price">
-               <span class="old-price">$35,568</span>
-               <span class="new-price">$32,698 </span>
-             </div>
-           </div>
-         </div>
-       </div>
-       <div class="item">
-         <div class="car-item gray-bg text-center">
-           <div class="car-image">
-             <img class="img-fluid" src="/images/03.jpg" alt="">
-             <div class="car-overlay-banner">
-              <ul> 
-                <li><a href="#"><i class="fa fa-link"></i></a></li>
-                <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
-               </ul>
-             </div>
-           </div>
-           <div class="car-list">
-             <ul class="list-inline">
-               <li><i class="fa fa-registered"></i> 2016</li>
-               <li><i class="fa fa-cog"></i> Manual </li>
-               <li><i class="fa fa-dashboard"></i> 6,000 mi</li>
-             </ul>
-          </div>
-           <div class="car-content">
-            <div class="star">
-             <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star-o orange-color"></i>
-             </div>
-             <a href="#">GTA 5 Lowriders DLC</a>
-             <div class="separator"></div>
-             <div class="price">
-               <span class="old-price">$35,568</span>
-               <span class="new-price">$32,698 </span>
-             </div>
-           </div>
-         </div>
-        </div>
-        <div class="item">
-         <div class="car-item gray-bg text-center">
-           <div class="car-image">
-             <img class="img-fluid" src="/images/04.jpg" alt="">
-             <div class="car-overlay-banner">
-              <ul> 
-                <li><a href="#"><i class="fa fa-link"></i></a></li>
-                <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
-               </ul>
-             </div>
-           </div>
-           <div class="car-list">
-             <ul class="list-inline">
-               <li><i class="fa fa-registered"></i> 2016</li>
-               <li><i class="fa fa-cog"></i> Manual </li>
-               <li><i class="fa fa-dashboard"></i> 6,000 mi</li>
-             </ul>
-          </div>
-           <div class="car-content">
-            <div class="star">
-             <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star orange-color"></i>
-              <i class="fa fa-star-o orange-color"></i>
-             </div>
-             <a href="#"> Toyota avalon hybrid </a>
-             <div class="separator"></div>
-             <div class="price">
-               <span class="old-price">$35,568</span>
-               <span class="new-price">$32,698 </span>
-             </div>
-           </div>
-         </div>
-        </div>
+        @endforeach
        </div>
       </div>
      </div>
@@ -366,21 +172,6 @@
    </div>
    <div class="col-md-4">
        <div class="car-details-sidebar">
-          <div class="details-block details-weight">
-            <h5>Descripción</h5>
-            <ul>
-              <li> <span>Make</span> <strong class="text-right">BMW</strong></li>
-              <li> <span>Model</span> <strong class="text-right">7-series</strong></li>
-              <li> <span>Registration date </span> <strong class="text-right">2017</strong></li>
-              <li> <span>Mileage</span> <strong class="text-right">25,000 mi</strong></li>
-              <li> <span>Condition</span> <strong class="text-right">New</strong></li>
-              <li> <span>Exterior Color</span> <strong class="text-right">Silver</strong></li>
-              <li> <span>Interior Color</span> <strong class="text-right">Brown (Leather)</strong></li>
-              <li> <span>Transmission</span> <strong class="text-right">Automatic</strong></li>
-              <li> <span>Engine</span> <strong class="text-right">5.1 L</strong></li>
-              <li> <span>Drivetrain</span> <strong class="text-right">FWD</strong></li>
-            </ul>
-          </div>
           <div class="details-social details-weight">
             <h5>Compartir ahora</h5>
             <ul>

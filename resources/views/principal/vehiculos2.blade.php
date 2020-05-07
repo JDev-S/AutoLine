@@ -1,4 +1,34 @@
-@extends('welcome')           
+@extends('welcome')
+@section('head')
+<?php
+ $paginacion= $numero_autos[0]->numero_autos/7;
+                   $paginacion=ceil($paginacion); 
+                    if($pagina==1)
+                    {
+                       echo '<meta name="robots" content="index, follow" />';
+                        echo'<link rel="next" href="/vehiculos2/'.($pagina+1).'">';
+                    }
+                    else
+                    {
+                        echo '<meta name="robots" content="noindex, follow" />';
+                        if($pagina>$paginacion)
+                       {
+                         
+                           echo'<link rel="prev" href="/vehiculos2/'.$paginacion.'">';
+                       }
+                       else
+                       {
+                           
+                           echo'<link rel="prev" href="/vehiculos2/'.($pagina-1).'">';
+                       }
+                    }
+                     if($pagina<$paginacion && $pagina!=1)
+                   {
+                       
+                       echo'<link rel="next" href="/vehiculos2/'.($pagina+1).'">';
+                   }
+?>
+@stop
 @section('contenido')
 
 <section class="product-listing page-section-ptb">
@@ -102,16 +132,50 @@
            </div>
             @endforeach
           </div>
-          <div class="pagination-nav d-flex justify-content-center">
+           <div class="pagination-nav d-flex justify-content-center">
                <ul class="pagination">
-                 <li><a href="#">«</a></li>
-                 <li class="active"><a href="#">1</a></li>
-                 <li><a href="#">2</a></li>
-                 <li><a href="#">3</a></li>
-                 <li><a href="#">4</a></li>
-                 <li><a href="#">5</a></li>
-                 <li><a href="#">»</a></li>
-               </ul>
+                   <?php
+                   $paginacion= $numero_autos[0]->numero_autos/7;
+                   $paginacion=ceil($paginacion); 
+                   
+                   if($pagina>1)
+                   {
+                       if($pagina>$paginacion)
+                       {
+                           echo'<li><a href="/vehiculos2/'.$paginacion.'">«</a></li>';
+                       }
+                       else
+                       {
+                           echo'<li><a href="/vehiculos2/'.($pagina-1).'">«</a></li>';
+                       }
+                       
+                   }                
+                
+
+               
+                   
+
+                   for($i=1;$i<=ceil($numero_autos[0]->numero_autos/7);$i++)
+                   {
+                       if($i==$pagina)
+                       {
+                           echo'<li class="active"><a  href="/vehiculos2/'.$i.'">'.$i.'</a></li>';
+                           
+                       }
+                       else
+                       {
+                           echo'<li><a  href="/vehiculos2/'.$i.'">'.$i.'</a></li>';
+                       }
+                     
+                   }
+                    
+                   if($pagina<$paginacion)
+                   {
+                       echo'<li><a href="/vehiculos2/'.($pagina+1).'">»</a></li>';
+                   }
+                  
+                   ?>
+             </ul>
           </div>
        </div>
      </div>

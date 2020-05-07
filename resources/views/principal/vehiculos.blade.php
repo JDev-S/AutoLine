@@ -6,7 +6,7 @@
                     if($pagina==1)
                     {
                        echo '<meta name="robots" content="index, follow" />';
-                        echo'<link rel="next" href="/vehiculos/'.($pagina+1).'">';
+                        echo'<link rel="next" href="/vehiculos/'.($pagina+1).'/'.$numero.'">';
                     }
                     else
                     {
@@ -14,18 +14,18 @@
                         if($pagina>$paginacion)
                        {
                          
-                           echo'<link rel="prev" href="/vehiculos/'.$paginacion.'">';
+                           echo'<link rel="prev" href="/vehiculos/'.$paginacion.'/'.$numero.'">';
                        }
                        else
                        {
                            
-                           echo'<link rel="prev" href="/vehiculos/'.($pagina-1).'">';
+                           echo'<link rel="prev" href="/vehiculos/'.($pagina-1).'/'.$numero.'">';
                        }
                     }
                      if($pagina<$paginacion && $pagina!=1)
                    {
                        
-                       echo'<link rel="next" href="/vehiculos/'.($pagina+1).'">';
+                       echo'<link rel="next" href="/vehiculos/'.($pagina+1).'/'.$numero.'">';
                    }
 ?>
 @stop
@@ -62,15 +62,15 @@
        <div class="sorting-options-main">
         <div class="row">
          <div class="col-lg-7">
-          <div class="price-slide-2">
+          <!--<div class="price-slide-2">
            <div class="price">
             <label for="amount-2">Rango</label>
-              <input type="text" id="amount-2" class="amount" value="$50 - $300" />
+              <input type="text" id="amount-2" class="amount" value="<?php echo'$0 - $'.$precio_mayor[0]->precio;?>" />
              <div id="slider-range-2"></div>
            </div>
-          </div>
+          </div>-->
          </div>
-         <div class="col-lg-5" >
+         <!--<div class="col-lg-5" >
            <div class="price-search" >
             <span >Buscar por véhiculo</span>
              <div class="search">
@@ -78,28 +78,28 @@
              <input type="search" class="form-control placeholder" placeholder="Buscar...." >
             </div>
            </div>
-         </div>
+         </div>-->
         </div> 
         <div class="row sorting-options">
           <div class="col-md-5">
-           <div class="change-view-button">
-             <a href="/vehiculos2"> <i class="fa fa-th"></i> </a>
-             <a class="active" href="/vehiculos"> <i class="fa fa-list-ul"></i> </a>
+           <div class="change-view-button" >
+             <a href="/vehiculos2"> <i class="fa fa-th" ></i> </a>
+             <a class="active" href="/vehiculos" > <i class="fa fa-list-ul"  ></i> </a>
            </div>
           </div> 
-         <div class="col-md-3 text-right">
+         <!--<div class="col-md-3 text-right">
            <div class="selected-box">
-            <select>
-              <option>Mostrar  </option>
-              <option>7</option>
-              <option>14 </option>
-              <option>21 </option>
-              <option>28 </option>
-              <option>35 </option>
+            <select name="provincia" id="provincia" onChange="imprimirValor()">
+              <option value="" disabled selected>Seleccione una Provincia...</option>
+                <option value="AB">Albacete</option>
+                <option value="AL">Almería</option>
+                <option value="AR">Araba</option>
+                <option value="AV">Ávila</option>
+                <option value="BA">Badajoz</option>
             </select>
           </div>
-         </div>
-         <div class="col-md-4 text-right">
+         </div>-->
+         <!--<div class="col-md-4 text-right">
             <div class="selected-box">
              <select>
               <option>Ordenar por </option>
@@ -109,7 +109,7 @@
               <option>Ordenar por: Z - A </option>
              </select>
            </div>
-        </div>
+        </div>-->
         </div>
         </div>
           @foreach($aAutos as $auto)
@@ -135,7 +135,7 @@
                   </div>
                   <div class="price">
                        <span class="new-price">${{$auto->precio}} </span>
-                       <a class="button red float-right" href="/vehiculo">Details</a>
+                       <a class="button red float-right" href='/vehiculo/{{$auto->id_auto}}'>Detalle</a>
                      </div>
                    <div class="car-list">
                      <ul class="list-inline">
@@ -270,36 +270,32 @@
                    {
                        if($pagina>$paginacion)
                        {
-                           echo'<li><a href="/vehiculos/'.$paginacion.'">«</a></li>';
+                           echo'<li><a href="/vehiculos/'.$paginacion.'/'.$numero.'">«</a></li>';
                        }
                        else
                        {
-                           echo'<li><a href="/vehiculos/'.($pagina-1).'">«</a></li>';
+                           echo'<li><a href="/vehiculos/'.($pagina-1).'/'.$numero.'">«</a></li>';
                        }
                        
                    }                
-                
-
-               
-                   
 
                    for($i=1;$i<=ceil($numero_autos[0]->numero_autos/7);$i++)
                    {
                        if($i==$pagina)
                        {
-                           echo'<li class="active"><a  href="/vehiculos/'.$i.'">'.$i.'</a></li>';
+                           echo'<li class="active"><a  href="/vehiculos/'.$i.'/'.$numero.'">'.$i.'</a></li>';
                            
                        }
                        else
                        {
-                           echo'<li><a  href="/vehiculos/'.$i.'">'.$i.'</a></li>';
+                           echo'<li><a  href="/vehiculos/'.$i.'/'.$numero.'">'.$i.'</a></li>';
                        }
                      
                    }
                     
                    if($pagina<$paginacion)
                    {
-                       echo'<li><a href="/vehiculos/'.($pagina+1).'">»</a></li>';
+                       echo'<li><a href="/vehiculos/'.($pagina+1).'/'.$numero.'">»</a></li>';
                    }
                   
                    ?>
@@ -309,7 +305,32 @@
         </div>
       </div>
 </section>
-        
-
+@section('scripts')
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script type="text/javascript">
+/*alert("A");
+var select = document.getElementById('provincia');
+alert("B");
+select.addEventListener('change',
+  function(){
+    var selectedOption = this.options[select.selectedIndex];
+    alert("C");
+    console.log(selectedOption.value + ': ' + selectedOption.text);
+    alert("D");
+  });*/
+    
+function imprimirValor(){
+    alert("A");
+  var select = document.getElementById("provincia");
+    alert("B");
+  var options=document.getElementsByTagName("option");
+    alert("C");
+  console.log(select.value);
+    alert(select.value);
+  console.log(options[select.value-1].innerHTML)
+    alert("Final");
+}
+</script>
+@stop
 
 @stop
