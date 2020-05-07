@@ -80,3 +80,6 @@ Route::post('/Admin_fotos_autos_nuevo','Fotos_autoController@insertar');
 Route::get('/Admin_fotos_autos_editar','Fotos_autoController@fotos_autos_editar');
 Route::post('/Admin_fotos_autos_editar','Fotos_autoController@actualizar');
 /////////////////////////////////////////////////////////////////////77
+/*Mandar correo desde contacto*/
+Route::post('/contactar', 'EmailController@contact')->name('contact');
+/*Mandar correo desde cotizador*/

@@ -18,21 +18,21 @@
         <div class="gray-form row">
          <div class="col-md-12">
           <div id="formmessage">Success/Error Message Goes Here</div>
-           <form class="form-horizontal" id="contactform" role="form" method="post" action="php/contact-form.php">
-            
+           <form class="form-horizontal" id="contactform" role="form" method="POST" action={{route('contact')}}>
+            {{ csrf_field() }}
             <p>¡Sería genial saber de ti! Si tiene alguna pregunta, no dude en enviarnos un mensaje. ¡Esperamos tener noticias suyas! Respondemos en 24 horas. !</p>
             <div class="contact-form">
                <div class="form-group">
-                 <input id="name" type="text" placeholder="Nombre completo*" class="form-control"  name="name">
+                 <input id="nombre_completo" type="text" placeholder="Nombre completo*" class="form-control"  name="nombre_completo" data-constraints="@Required">
              </div> 
                <div class="form-group">
-                 <input type="email" placeholder="Correo*" class="form-control" name="email">
+                 <input type="email" id="email" placeholder="Correo*" class="form-control" name="email" data-constraints="@Required">
                 </div>
                 <div class="form-group">
-                  <input type="text" placeholder="Teléfono*" class="form-control" name="phone">
-              </div>
+                  <input type="text" id="telefono" placeholder="Teléfono*" class="form-control" name="telefono" data-constraints="@Required">
+                </div>
                  <div class="form-group">
-                   <textarea class="form-control input-message" placeholder="Comentario*" rows="7" name="message"></textarea>
+                   <textarea class="form-control input-message" placeholder="Comentario*" rows="7" id="descripcion" name="descripcion" data-constraints="@Required"></textarea>
               </div>
                  <input type="hidden" name="action" value="sendEmail"/>
                  <button id="submit" name="submit" type="submit" value="Send" class="button red"> Enviar!! </button>
@@ -49,7 +49,7 @@
              </div>
              <div class="content">
                <h5>Dirección </h5>
-                <p>220E Front St. Burlington NC 215 </p>
+                <p>Blvd Faja de Oro #1217 Salamanca (México) </p>
               </div>
             </div>
             <div class="feature-box-3">
@@ -58,7 +58,7 @@
              </div>
              <div class="content">
                <h5>Teléfono </h5>
-                <p>(007) 123 456 7890 </p>
+                <p>464 643 8260 </p>
               </div>
             </div>
             <div class="feature-box-3">

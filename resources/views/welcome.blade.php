@@ -328,12 +328,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="col-lg-4 col-md-12">
       <div class="social text-lg-right text-center">
           <ul>
-            <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-            <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
-            <li><a href="#"> <i class="fa fa-pinterest-p"></i> </a></li>
+            <li><a href="https://www.facebook.com/autolinesalamanca/"> <i class="fa fa-facebook"></i> </a></li>
+            <li><a href="https://www.instagram.com/autolinegto/?hl=es-la"> <i class="fa fa-instagram"></i> </a></li>
+            <!--<li><a href="#"> <i class="fa fa-pinterest-p"></i> </a></li>
             <li><a href="#"> <i class="fa fa-dribbble"></i> </a></li>
             <li><a href="#"> <i class="fa fa-vimeo"></i> </a></li>
-            <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>
+            <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>-->
           </ul>
        </div>      
     </div>

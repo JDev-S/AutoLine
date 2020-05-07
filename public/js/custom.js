@@ -339,7 +339,7 @@ var POTENZA = {};
           $("#ajaxloader").show();
           $("#contactform").hide();
           $.ajax({
-            url:'php/contact-form.php',
+            url:'contactar',
             data:$(this).serialize(),
             type:'post',
             success:function(response){

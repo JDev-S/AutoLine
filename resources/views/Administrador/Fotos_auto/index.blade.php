@@ -27,7 +27,7 @@
           @foreach($fotos as $auto)
               <tr>
               <td>{{ $auto->carro}}</td>
-              <td><img src="{{ $auto->foto}}"></td>
+              <td><img src='{{ $auto->foto}}' width="200px" height="200px"></td>
                   <td>
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-id="<?php echo $auto->id_foto;?>" data-foto="<?php echo $auto->foto;?>">Eliminar</button>
                       
@@ -90,7 +90,7 @@
 
        ?>
 
-     {{ Form::open(array('action' => 'Fotos_autoController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
+     {{ Form::open(array('action' => 'Fotos_autoController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform','enctype'=>'multipart/form-data')) }}
 
          
        
@@ -104,10 +104,9 @@
          </div>
          
          <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Imagen del auto:</label>
-         {!! Form::textarea('foto_show', null, ['id' => 'foto_show', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','required' => 'required']) !!}
+           <label for="recipient-name" class="col-form-label">Fotos del auto:</label>
+           {{ Form::file('foto_show', array('id' => 'foto_show')) }}
          </div>
-
 
          <div class="modal-footer">
        {!! Form::submit( 'Insertar', ['class' => 'btn btn-primary', 'name' => 'submitbutton', 'value' => 'login'])!!}

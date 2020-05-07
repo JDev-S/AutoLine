@@ -37,12 +37,23 @@ class Fotos_autoController extends Controller
 	
 	public function insertar(Request $input)
 	{
-        $id_auto = $input['auto_show'];
-        $foto = $input['foto_show'];
-        
-        $query=DB::insert('insert into fotos_auto (id_foto,foto,id_auto) values ( ?, ?, ?)', [ null,$foto,$id_auto]);
+         $id_auto = $input['auto_show'];
+        $query2=DB::select("select *  FROM auto WHERE id_auto='$id_auto'");
+           
+         $marca=$query2[0]->marca;
+         $modelo=$query2[0]->modelo;
+    
+         if($input->hasFile('foto_show'))
+         {
+             $file=$input->file('foto_show');
+             $name=time().$marca."_".$modelo;
+             $file->move(public_path().'/images/',$name);
+             $foto="/images/".$name;
+              
+                 $query=DB::insert('insert into fotos_auto (id_foto,foto,id_auto) values ( ?, ?, ?)', [ null,$foto,$id_auto]);
         return redirect()->action('Fotos_autoController@fotos_autos_mostrar')->withInput();
 	
+         }
 	}
 
 	public function fotos_autos_editar()
