@@ -225,8 +225,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><a href="/">Inicio</a></li>
           <li><a href="/vehiculos">Vehículos</a></li>
           <li><a href="/contacto">Contáctanos</a></li>
-          <!--<li><a href="#">Blog</a></li>
-          <li><a href="#">Contact us</a></li>-->
         </ul>
       </div>
     </div>
@@ -243,42 +241,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        </div>      
     </div>
    </div>
-    <!--<div class="row">
-      <div class="col-lg-5 col-md-12">
-        <div class="about-content">
-         <h6 class="text-black">about us</h6>
-          <p class="text-gray">Car Dealer is the best premium HTML5 Template. We provide everything you need to build an Amazing dealership website developed especially for car sellers, dealers or auto motor retailers. You can use this template for creating website.</p>
-        </div>
-      </div>
-      <div class="col-lg-7 col-md-12">
-      <h6 class="text-black">Useful Links</h6>
-          <div class="usefull-link">
-            <div class="row">
-              <div class="col-md-4">
-                <ul>
-                <li> <a href="#"> <i class="fa fa-angle-right"></i> Change </a></li>
-                <li> <a href="#"> <i class="fa fa-angle-right"></i> Replacement</a></li>
-                <li> <a href="#"> <i class="fa fa-angle-right"></i> Contact us</a></li>
-               </ul>
-              </div>
-              <div class="col-md-4">
-                <ul>
-                <li> <a href="#"> <i class="fa fa-angle-right"></i> Change </a></li>
-                <li> <a href="#"> <i class="fa fa-angle-right"></i> Replacement</a></li>
-                <li> <a href="#"> <i class="fa fa-angle-right"></i> Contact us</a></li>
-               </ul>
-              </div>
-              <div class="col-md-4">
-                <ul>
-                <li> <a href="#"> <i class="fa fa-angle-right"></i> Change </a></li>
-                <li> <a href="#"> <i class="fa fa-angle-right"></i> Replacement</a></li>
-                <li> <a href="#"> <i class="fa fa-angle-right"></i> Contact us</a></li>
-               </ul>
-              </div>
-            </div>
-        </div> 
-      </div>
-    </div>-->
     </div>
     <div class="copyright">
      <div class="container">

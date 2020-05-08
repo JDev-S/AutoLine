@@ -92,3 +92,11 @@ Route::post('/Admin_horario_editar','HorarioController@actualizar');
 /*Mandar correo desde contacto*/
 Route::post('/contactar', 'EmailController@contact')->name('contact');
 /*Mandar correo desde cotizador*/
+
+/*Logueo del Administrador*/
+Route::get('/Admin_login', function () {
+    return view('/Administrador/login');
+});
+
+Route::post('/Admin_consola', 'LoguinController@login')->name('logueo');
+
