@@ -1,4 +1,11 @@
-@extends('welcome')           
+@extends('welcome')
+@section('gifs')
+<div id="loading">
+  <div id="loading-center">
+      <img src="/images/loader2.gif" alt="img_gif">
+ </div>
+</div>
+@stop
 @section('contenido')
 
 <div id="rev_slider_3_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="car-dealer-05" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
@@ -175,8 +182,8 @@
           <div class="details-social details-weight">
             <h5>Compartir ahora</h5>
             <ul>
-              <li><a href="#"> <i class="fa fa-facebook"></i> facebook</a></li>
-              <li><a href="#"> <i class="fa fa-twitter"></i> twitter</a></li>
+              <li><a href="https://www.facebook.com/autolinesalamanca/"> <i class="fa fa-facebook"></i> facebook</a></li>
+              <li><a href="https://www.instagram.com/autolinegto/?hl=es-la"> <i class="fa fa-instagram"></i> Instagram</a></li>
               <li><a href="#"> <i class="fa fa-pinterest-p"></i> pinterest</a></li>
               <li><a href="#"> <i class="fa fa-dribbble"></i> dribbble</a></li>
               <li><a href="#"><i class="fa fa-linkedin"></i> google plus </a></li>

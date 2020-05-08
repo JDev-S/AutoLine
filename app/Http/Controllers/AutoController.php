@@ -83,7 +83,7 @@ class AutoController extends Controller
     
     
     
-    public function mostrar_autos($pagina=1,$numero=7)
+    public function mostrar_autos($pagina=1)
     {
         if($pagina<=0)
         {
@@ -93,14 +93,14 @@ class AutoController extends Controller
         $aAutos_final=array();
         $numero_autos=DB::select('select count(*)as numero_autos from auto');
         $precio_mayor=DB::select('select max(auto.precio)as precio from auto');
-        $valor=($pagina*$numero)-$numero;
+        $valor=($pagina*7)-7;
         
          
 		$autos=DB::select("SELECT * from ((select auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto,descripcion_especificcacion.descripcion,especificacion.especificacion from auto left join descripcion_especificcacion on auto.id_auto=descripcion_especificcacion.id_auto inner join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion WHERE auto.id_auto in ( SELECT auto.id_auto FROM ( SELECT auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto FROM auto) as t where especificacion.especificacion='Año' or especificacion.especificacion='Transmision' or especificacion.especificacion='Kilometraje' or especificacion.especificacion='Caballos de fuerza') order by auto.id_auto)
 
         UNION
 
-        (select auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto,descripcion_especificcacion.descripcion,especificacion.especificacion from auto left join descripcion_especificcacion on auto.id_auto=descripcion_especificcacion.id_auto left join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion where auto.id_auto not in(select descripcion_especificcacion.id_auto from descripcion_especificcacion inner join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion where especificacion.especificacion='Año' or especificacion.especificacion='Transmision' or especificacion.especificacion='Kilometraje' or especificacion.especificacion='Caballos de fuerza') GROUP by id_auto)) as t where id_auto in (SELECT id_auto from (select * from auto limit $valor,$numero) as t) order by id_auto");
+        (select auto.id_auto,auto.marca,auto.modelo,auto.precio,auto.foto,descripcion_especificcacion.descripcion,especificacion.especificacion from auto left join descripcion_especificcacion on auto.id_auto=descripcion_especificcacion.id_auto left join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion where auto.id_auto not in(select descripcion_especificcacion.id_auto from descripcion_especificcacion inner join especificacion on especificacion.id_especificacion=descripcion_especificcacion.id_especificacion where especificacion.especificacion='Año' or especificacion.especificacion='Transmision' or especificacion.especificacion='Kilometraje' or especificacion.especificacion='Caballos de fuerza') GROUP by id_auto)) as t where id_auto in (SELECT id_auto from (select * from auto limit $valor,7) as t) order by id_auto");
         
           $oAutos = new \stdClass();
           $auxId_auto = -1;
@@ -124,12 +124,10 @@ class AutoController extends Controller
               }
               
               $auxId_auto = $auto->id_auto;
-              $oAutos->id_auto= $auto->id_auto;
               $oAutos->nombre = $auto->marca.' '.$auto->modelo;
               $oAutos->precio = $auto->precio;
               $oAutos->foto = $auto->foto;
-              
-              
+              $oAutos->id_auto = $auto->id_auto;
              
               if($auto->especificacion=='Año')
               {
@@ -161,10 +159,9 @@ class AutoController extends Controller
                     array_push($aAutos,$oAutos);
               }
           }
-        //print_r($aAutos);
-        //die();
+        
           
-		return view('/principal/vehiculos',compact('aAutos','numero_autos','pagina','precio_mayor','numero'));
+		return view('/principal/vehiculos',compact('aAutos','numero_autos','pagina','precio_mayor'));
     }
     
     
@@ -215,6 +212,7 @@ class AutoController extends Controller
               $oAutos->nombre = $auto->marca.' '.$auto->modelo;
               $oAutos->precio = $auto->precio;
               $oAutos->foto = $auto->foto;
+              $oAutos->id_auto=$auto->id_auto;
               
              
               if($auto->especificacion=='Año')

@@ -1,4 +1,11 @@
-@extends('welcome')           
+@extends('welcome')   
+@section('gifs')
+<div id="loading">
+  <div id="loading-center">
+      <img src="/images/loader3.gif" alt="img_gif">
+ </div>
+</div>
+@stop
 @section('contenido')
 
 <div id="rev_slider_3_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="car-dealer-05" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
@@ -84,10 +91,6 @@
          <div class="car-image">
            <img class="img-fluid" src='{{$auto->foto}}' alt="imagen_auto" width="450px;" height="321px;">
            <div class="car-overlay-banner">
-            <ul> 
-              <li><a href="#"><i class="fa fa-link"></i></a></li>
-              <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
-             </ul>
            </div>
          </div>
          <div class="car-content">
@@ -122,7 +125,7 @@
     <div class="row about custom-block-2">
       <div class="col-md-6">
         <h2>Acerca de</h2> 
-        <p>Car Dealer is the best premium HTML5 Template. We provide everything you need to build an <b>Amazing dealership website </b> developed especially for car sellers, dealers or auto motor retailers. You can use this template for creating website based on any framework and any language </p>
+        <p>Concesionario  en Salamanca Gto. (México)</p>
       </div>
       <div class="col-md-6">
         <img class="img-fluid center-block" src="/images/11.png" alt="">

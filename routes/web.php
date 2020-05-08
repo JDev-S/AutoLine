@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','AutoController@mostrar_autos_index');
 
-Route::get('/vehiculos/{pagina?}/{numero}','AutoController@mostrar_autos');
+Route::get('/vehiculos/{pagina?}','AutoController@mostrar_autos');
 Route::get('/vehiculos2/{pagina?}','AutoController@mostrar_autos2');
 
 Route::get('/vehiculo/{id_auto}','AutoController@mostrar_unico_carro');

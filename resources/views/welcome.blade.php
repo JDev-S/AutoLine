@@ -67,11 +67,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!--=================================
   loading -->
   
- <div id="loading">
-  <div id="loading-center">
-      <img src="/images/loader3.gif" alt="">
- </div>
-</div>
+ @yield('gifs')
 
 <!--=================================
   loading -->
@@ -152,7 +148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <li><a href="index-landing-page.html">landing page</a></li>
                 </ul>-->
             </li>
-            <li><a href="/vehiculos/1/7">Vehículos </a>
+            <li><a href="/vehiculos/">Vehículos </a>
                 <!-- drop down full width -->
                 <!--<div class="drop-down menu-bg grid-col-12">
                     
@@ -202,58 +198,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>-->
             </li>
             <li><a href="/contacto">Contacto </a>
-                <!-- drop down multilevel  -->
-                <!--<ul class="drop-down-multilevel">
-                    <li><a href="javascript:void(0)">blog classic <i class="fa fa-angle-right fa-indicator"></i> </a>
-                        <!-- drop down second level 
-                        <ul class="drop-down-multilevel">
-                           <li><a href="blog-left-sidebar.html">left sidebar</a></li>
-                           <li><a href="blog-right-sidebar.html">right sidebar</a></li>
-                           <li><a href="blog-fullwidth.html">fullwidth</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="javascript:void(0)">Masonry  <i class="fa fa-angle-right fa-indicator"></i> </a>
-                      <!-- drop down second level 
-                        <ul class="drop-down-multilevel">
-                            <li><a href="blog-masonry-2-collums.html"> 2 column </a> </li>
-                            <li><a href="blog-masonry-3-collums.html"> 3 column </a> </li>
-                            <li><a href="blog-masonry-4-collums.html"> 4 column </a> </li>
-                            <li><a href="blog-masonry-left-sidebar.html">left sidebar</a></li>
-                           <li><a href="blog-masonry-right-sidebar.html">right sidebar</a></li>
-                        </ul> 
-                    </li>
-                    <li><a href="javascript:void(0)">blog single <i class="fa fa-angle-right fa-indicator"></i> </a>
-                      <!-- drop down second level 
-                        <ul class="drop-down-multilevel">
-                            <li><a href="blog-single-01.html">blog single 01 </a> </li>
-                            <li><a href="blog-single-02.html">blog single 02 </a> </li>
-                        </ul> 
-                    </li>
-                </ul>-->
             </li>
             <li><a href="/contacto">Cotizador </a>
             </li>
-            <!--<li><a href="javascript:void(0)">Car listing  <i class="fa fa-angle-down fa-indicator"></i></a> 
-               <!-- drop down multilevel  
-                <ul class="drop-down-multilevel">
-                    <li><a href="listing-01.html">listing 01</a></li>
-                    <li><a href="listing-02.html">listing 02</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0)">Car details  <i class="fa fa-angle-down fa-indicator"></i></a> 
-               <!-- drop down multilevel  
-                <ul class="drop-down-multilevel">
-                    <li><a href="details-01.html">details 01</a></li>
-                    <li><a href="details-02.html">details 02</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0)"> Contact <i class="fa fa-angle-down fa-indicator"></i></a>
-                 <!-- drop down multilevel  -
-                <ul class="drop-down-multilevel right-menu">
-                   <li><a href="contact-01.html">contact 01</a></li>
-                   <li><a href="contact-02.html">contact 02</a></li>
-                </ul>
-            </li>-->
         </ul>
        </div>
       </div>
@@ -263,50 +210,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- menu end -->
  </div>
 </header>
-
-<!--=================================
- header -->
-
-
-<!--=================================
- rev-slider -->
- 
-
-
-<!--=================================
- rev-slider -->
-
-
-<!--=================================
- search -->
-
-
-<!--=================================
- search -->
-
-
-<!--=================================
- welcome -->
-
-
-
-<!--=================================
- welcome -->
- 
- 
-<!--=================================
- feature-car -->
-
-
-
-<!--=================================
- feature-car -->
-
   
 @yield('contenido')   
-
-<!--=================================
- footer -->
 
 <footer class="footer-3 footer-topbar light page-section-pt">
   <div class="container">

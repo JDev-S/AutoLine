@@ -1,4 +1,11 @@
-@extends('welcome')           
+@extends('welcome')
+@section('gifs')
+<div id="loading">
+  <div id="loading-center">
+      <img src="/images/loader4.gif" alt="img_gif">
+ </div>
+</div>
+@stop
 @section('contenido')
 
 

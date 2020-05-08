@@ -9,9 +9,6 @@ class HorarioController extends Controller
      public function mostrar_horario()
 	{
         $autos=DB::select("select dia,concat(hora_inicial,'-',hora_final)as horas from horario");
-        
-         print_r($autos);
-         die();
 		return view('/principal/contacto',compact('autos'));
     }
     
