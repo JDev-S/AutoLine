@@ -7,6 +7,12 @@ use DB;
 
 class AutoController extends Controller
 {
+    public function formato_moneda($valor) 
+    {
+        if ($valor<0) return "-".formato_moneda(-$valor);
+        return '$' . number_format($valor, 2);
+    }
+    
      public function mostrar_autos_index()
 	{
         $aAutos = array();
@@ -41,7 +47,7 @@ class AutoController extends Controller
               
               $auxId_auto = $auto->id_auto;
               $oAutos->nombre = $auto->marca.' '.$auto->modelo;
-              $oAutos->precio = $auto->precio;
+              $oAutos->precio = self::formato_moneda($auto->precio);
               $oAutos->foto = $auto->foto;
               $oAutos->id_auto = $auto->id_auto;
               
@@ -125,7 +131,7 @@ class AutoController extends Controller
               
               $auxId_auto = $auto->id_auto;
               $oAutos->nombre = $auto->marca.' '.$auto->modelo;
-              $oAutos->precio = $auto->precio;
+              $oAutos->precio = self::formato_moneda($auto->precio);
               $oAutos->foto = $auto->foto;
               $oAutos->id_auto = $auto->id_auto;
              
@@ -210,7 +216,7 @@ class AutoController extends Controller
               
               $auxId_auto = $auto->id_auto;
               $oAutos->nombre = $auto->marca.' '.$auto->modelo;
-              $oAutos->precio = $auto->precio;
+              $oAutos->precio = self::formato_moneda($auto->precio);
               $oAutos->foto = $auto->foto;
               $oAutos->id_auto=$auto->id_auto;
               
@@ -275,7 +281,8 @@ class AutoController extends Controller
         $oAutos->nombre = $autos[0]->marca.' '.$autos[0]->modelo;
         $oAutos->marca = $autos[0]->marca;
         $oAutos->modelo = $autos[0]->modelo;
-        $oAutos->precio = $autos[0]->precio;
+        //$oAutos->precio = $autos[0]->precio;
+        $oAutos->precio = self::formato_moneda($autos[0]->precio);
         $oAutos->foto = $autos[0]->foto;
          
         $oAutos->especificaciones = $descripcion_auto;
@@ -314,7 +321,7 @@ class AutoController extends Controller
               
               $auxId_auto = $auto->id_auto;
               $oAutos2->nombre = $auto->marca.' '.$auto->modelo;
-              $oAutos2->precio = $auto->precio;
+              $oAutos2->precio = self::formato_moneda($auto->precio);
               $oAutos2->foto = $auto->foto;
               $oAutos2->id_auto = $auto->id_auto;
              

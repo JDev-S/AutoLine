@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col-md-12 justify-content-center">
          <div class="section-title">
-           <span>Encantados en escucharte.</span>
+           <span>Encantados de escucharte.</span>
            <h2>Pongámonos en contacto!</h2>
            <div class="separator"></div>
          </div>
@@ -27,7 +27,7 @@
           <div id="formmessage">Success/Error Message Goes Here</div>
            <form class="form-horizontal" id="contactform" role="form" method="POST" action={{route('contact')}}>
             {{ csrf_field() }}
-            <p>¡Sería genial saber de ti! Si tiene alguna pregunta, no dude en enviarnos un mensaje. ¡Esperamos tener noticias suyas! Respondemos en 24 horas. !</p>
+            <p>¡Sería genial saber de ti! Si tiene alguna pregunta, no dude en enviarnos un mensaje. ¡Esperamos tener noticias suyas! Respondemos las 24 horas!</p>
             <div class="contact-form">
                <div class="form-group">
                  <input id="nombre_completo" type="text" placeholder="Nombre completo*" class="form-control"  name="nombre_completo" data-constraints="@Required">
@@ -78,10 +78,10 @@
               </div>
             </div>
             <div class="opening-hours gray-bg">
-                <h6>Horarios</h6>
+                <h6>Horario</h6>
                 <ul class="list-style-none">
                   @foreach($autos as $auto)  
-                  <li><strong>{{$auto->dia}}</strong> <span > {{$auto->horas}}</span></li>
+                  <li><strong>{{$auto->dia}}:</strong> <span > {{$auto->horas}}</span></li>
                   @endforeach
                 </ul>
               </div>

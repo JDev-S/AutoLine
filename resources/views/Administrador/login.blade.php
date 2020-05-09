@@ -26,7 +26,7 @@
           <div class="form-group">
             
              <label for="name">Nombre de usuario* </label>
-               <input id="nombre" class="form-control" type="text" placeholder="Nombre de usuario" name="nombre" data-constraints="@Required">
+               <input id="email" class="form-control" type="email" placeholder="Nombre de usuario" name="email" data-constraints="@Required">
          </div>
          <div class="form-group">
              <label for="Password">Contraseña* </label>

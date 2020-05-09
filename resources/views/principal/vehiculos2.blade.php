@@ -82,7 +82,7 @@
                <a href="/vehiculo/{{$auto->id_auto}}">{{$auto->nombre}}</a>
                <div class="separator"></div>
                <div class="price">
-                 <span class="new-price">${{$auto->precio}} </span>
+                 <span class="new-price">{{$auto->precio}} </span>
                </div>
              </div>
            </div>

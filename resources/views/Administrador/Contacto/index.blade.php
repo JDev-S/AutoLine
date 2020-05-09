@@ -20,8 +20,8 @@
           @foreach($contacto as $auto)
               <tr>
                   <td>{{ $auto->nombre}}</td>
-                  <td>{{ $auto->correo}}</td>
-                  <td>{{ $auto->telefono}}</td>
+                  <td><a href="mailto:{{$auto->correo}}">{{ $auto->correo}}</a></td>
+                  <td><a href="tel:{{$auto->telefono}}">{{ $auto->telefono}}</a></td>
                   <td>{{ $auto->precio}}</td>
                   <td>{{ $auto->carro}}</td>
               </tr>

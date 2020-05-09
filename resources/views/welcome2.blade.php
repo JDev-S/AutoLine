@@ -85,7 +85,11 @@
                             <a href="/Admin_horario">
                                 <i class="fas fa-map-marker-alt"></i>Horario</a>
                         </li>
-
+                        
+                         <li>
+                            <a href="/cerrar_sesion">
+                                <i class="fas fa-map-marker-alt"></i>Cerrar sesión</a>
+                        </li>
 
                     </ul>
                 </div>
@@ -129,6 +133,11 @@
                             <a href="/Admin_horario">
                                 <i class="fas fa-map-marker-alt"></i>Horario</a>
                         </li>
+                        
+                        <li>
+                            <a href="/cerrar_sesion">
+                                <i class="fas fa-map-marker-alt"></i>Cerrar sesión</a>
+                        </li>
 
 
                     </ul>
@@ -140,16 +149,7 @@
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
-            <header class="header-desktop">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="header-wrap">
 
-
-                        </div>
-                    </div>
-                </div>
-            </header>
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
@@ -185,7 +185,7 @@
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-        <script src="bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <!--<script src="vendor/bootstrap/4.1.3/js/bootstrap.min.js"></script>-->
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <!-- Vendor JS       -->
     <script src="vendor/slick/slick.min.js">
@@ -205,7 +205,7 @@
 
     <!-- Main JS-->
     <script src="javas/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js|https://cdnjs.cloudflare.com/ajax/libs/twitter-"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     

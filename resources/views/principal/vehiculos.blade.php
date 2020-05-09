@@ -99,7 +99,7 @@
                  <a href='/vehiculo/{{$auto->id_auto}}'>{{$auto->nombre}}</a>
                   </div>
                   <div class="price">
-                       <span class="new-price">${{$auto->precio}} </span>
+                       <span class="new-price">{{$auto->precio}} </span>
                        <a class="button red float-right" href='/vehiculo/{{$auto->id_auto}}'>Detalle</a>
                      </div>
                    <div class="car-list">

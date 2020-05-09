@@ -31,7 +31,7 @@
       </div>
      <div class="col-md-3">
       <div class="car-price text-lg-right">
-         <strong>${{$oAutos->precio}}</strong>
+         <strong>{{$oAutos->precio}}</strong>
        </div> 
       </div> 
     </div>
@@ -39,54 +39,7 @@
       <div class="col-md-12">
         <div class="details-nav">
             <ul>
-              <li>
-                <a data-toggle="modal" data-target="#exampleModal4" data-whatever="@mdo" href="#" class="css_btn"><i class="fa fa-envelope"></i>Enviar email a amigo</a>
-                <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel">Email to a Friend</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div id="etf_message"></div>
-                      <div class="modal-body">
-                        <form class="gray-form reset_css" action="post" id="etf_form">
-                          <input type="hidden" name="action" value="email_to_friend" />
-                          <div>
-                            <span style="color: red;" class="sp"></span>
-                          </div>
-                          <div class="form-group">
-                            <label>Name*</label>
-                            <input name="etf_name" type="text" id="etf_name" class="form-control" >
-                          </div>
-                          <div class="form-group">
-                            <label>Email address*</label>
-                            <input type="text" class="form-control" id="etf_email" name="etf_email" >
-                          </div>
-                          <div class="form-group">
-                            <label>Friends Email*</label>
-                            <input type="Email" class="form-control" id="etf_fmail" name="etf_fmail">
-                          </div>
-                          <div class="form-group">
-                            <label>Message to friend*</label>
-                            <textarea class="form-control input-message" id="etf_fmessage" name="etf_fmessage" rows="4"></textarea>
-                          </div>
-                          <div class="form-group">
-                            <div id="recaptcha4"></div>
-                          </div>
-                          <div class="form-group">
-                            <a class="button red" id="email_to_friend_submit">Submit</a>
-                            <i class="fa fa-refresh fa-spin fa-3x fa-fw load_spiner"  style="display: none;"></i>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
+              
               <li><a href="javascript:window.print()"><i class="fa fa-print"></i>Imprime esta página</a></li>
             </ul>
          </div>
