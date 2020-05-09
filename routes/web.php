@@ -100,3 +100,7 @@ Route::get('/Admin_login', function () {
 
 Route::post('/Admin_consola', 'LoguinController@login')->name('logueo');
 
+Route::get('/Admin_consola', function () {
+    return view('/Administrador/index');
+});
+

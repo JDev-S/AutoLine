@@ -15,8 +15,8 @@ class LoguinController extends Controller
             //Autoline_salamanca   //carlos
             if($nombre=='admin' && $password=='12345')
             {
-                $mensaje='Si estuvo correctamente';
-                return view('/Administrador/index',compact('mensaje'));
+                $contacto=DB::select('select contacto.nombre,contacto.correo,contacto.telefono,contacto.precio,concat (auto.marca,' ',auto.modelo)as carro from contacto inner join auto on auto.id_auto=contacto.id_auto');
+                return view('/Administrador/index',compact('contacto'));
             }
             else
             {
@@ -24,6 +24,14 @@ class LoguinController extends Controller
                 $valor='login';
                 return redirect()->back();
             }        
+    }
+    
+    
+    public function mostrar_contactos()
+    {
+         $contacto=DB::select('select contacto.nombre,contacto.correo,contacto.telefono,contacto.precio,concat (auto.marca,' ',auto.modelo)as carro from contacto inner join auto on auto.id_auto=contacto.id_auto');
+                return view('/Administrador/index',compact('contacto'));
+        
     }
     
 }

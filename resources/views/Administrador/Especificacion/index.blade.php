@@ -1,14 +1,5 @@
 @extends('welcome2')
 @section('contenido')
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-  <title>Lista de especificaciones</title>
-
-</head>
-
-<body>
 
 <div class="container justify-content-center align-items-center">
   <br><br>
@@ -19,7 +10,9 @@
           <thead>
           <tr>
           <th>Especificaciones</th>
+        <th>Especificaciones</th>
           </tr>
+            
           </thead>
           <tbody>
           @foreach($especificaciones as $auto)
@@ -125,17 +118,7 @@
   </div>
 </div>
 </div>
-
-
-
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+@section('scripts')
 <script type="text/javascript">
 
 $('#editModal').on('show.bs.modal', function (event) {
@@ -181,11 +164,8 @@ $(document).ready(function() {
            "bJQueryUI":        false,
            "columns" : [
                {"data": 0},
-               {"data": 1},
-               {"data": 2},
-               {"data": 3},
-               
-               {"data": 4,'orderable': false, 'searchable': false}
+               {"data": 1,'orderable': false, 'searchable': false}
+
            ],
 
            "dom": "<'row'<'col-sm-7 col-md-4'l><'col-sm-6 col-md-3'f>>" +
@@ -214,7 +194,6 @@ $('#deleteModal').on('show.bs.modal', function (event) {
 });
 
 </script>
+@stop
 
-</body>
-</html>
 @stop
