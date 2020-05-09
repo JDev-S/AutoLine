@@ -12,8 +12,7 @@
     <div class="row">
       <div class="col-md-12">
          <div class="section-title">
-           <span>Log in with your id or social media </span>
-           <h2>Login To Your Account</h2>
+           <h2> Consola de administrador AutoLine </h2>
            <div class="separator"></div>
          </div>
       </div>
