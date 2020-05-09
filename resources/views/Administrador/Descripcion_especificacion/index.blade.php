@@ -183,6 +183,8 @@ $(document).ready(function() {
  var oTable = $('#table_id').dataTable( {
    "scrollX": true,
    "autoWidth": false,
+         "responsive": true,
+        "paging": true,
    "language": {
                "emptyTable":            "No hay datos disponibles en la tabla.",
                "info":                       "_START_ - _END_ de _TOTAL_ ",

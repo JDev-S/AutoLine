@@ -61,7 +61,7 @@
                     <ul class="navbar-mobile__list list-unstyled">
                        
                                                <li>
-                            <a href="">
+                            <a href="/Admin_contacto">
                                 <i class="fas fa-chart-bar"></i>Inicio</a>
                         </li>
                         <li>
@@ -105,7 +105,7 @@
                     <ul class="list-unstyled navbar__list">
 
                         <li>
-                            <a href="">
+                            <a href="/Admin_contacto">
                                 <i class="fas fa-chart-bar"></i>Inicio</a>
                         </li>
                         <li>
