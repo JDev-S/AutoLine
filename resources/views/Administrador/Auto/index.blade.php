@@ -2,10 +2,15 @@
 @section('contenido')
 
 <div class="container justify-content-center align-items-center">
-  <br><br>
+    <h2>Administración de Autos</h2>
+  <br>
+    
   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#insertModal">Agregar</button>
-
-  <div class="table-responsive" >
+<br>
+  <div class="table-responsive" style=" border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;">
       <table  id="table_id"class="table table-condensed table-striped table-bordered" style="width:auto">
           <thead>
           <tr>
@@ -83,18 +88,18 @@
      {{ Form::open(array('action' => 'AutoController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform','enctype'=>'multipart/form-data')) }}
          <div class="form-group">
            <label for="recipient-name" class="col-form-label">Marca:</label>
-           {{ Form::text('marca_show', '', array('id' => 'marca_show',  'placeholder' => 'Marca del auto','required' => 'required')) }}
+           {{ Form::text('marca_show', '', array('id' => 'marca_show',  'placeholder' => 'Escribe la marca del auto','required' => 'required')) }}
          </div>
          <div class="form-group">
            <label for="recipient-name" class="col-form-label">Modelo:</label>
-           {{ Form::text('modelo_show', '', array('id' => 'modelo_show',  'placeholder' => 'Modelo del auto','required' => 'required')) }}
+           {{ Form::text('modelo_show', '', array('id' => 'modelo_show',  'placeholder' => 'Escribe el modelo del auto','required' => 'required')) }}
          </div>
          <div class="form-group">
            <label for="recipient-name" class="col-form-label">Precio:</label>
-           {{ Form::text('precio_show', '', array('id' => 'precio_show',  'placeholder' => 'Precio del auto','required' => 'required')) }}
+           {{ Form::text('precio_show', '', array('id' => 'precio_show',  'placeholder' => 'Escribe el precio del auto','required' => 'required')) }}
          </div>
         <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Foto:</label>
+           <label for="recipient-name" class="col-form-label">Elige una nueva Foto:</label>
            {{ Form::file('foto_show', array('id' => 'foto_show')) }}
          </div>
         
@@ -121,30 +126,30 @@
       </button>
     </div>
     <div class="modal-body">
-      {{ Form::open(array('action' => 'AutoController@actualizar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
+      {{ Form::open(array('action' => 'AutoController@actualizar', 'method' => 'post','id'=>'student-settings','name'=>'loginform','enctype'=>'multipart/form-data')) }}
         <div class="form-group">
           <label for="recipient-name" class="col-form-label">Marca:</label>
-           {{ Form::text('marca_show', '', array('id' => 'marca_show',  'placeholder' => 'Marca del auto','required' => 'required')) }}
+           {{ Form::text('marca_show', '', array('id' => 'marca_show','class'=>'form-control',  'placeholder' => 'Escribe la marca del auto','required' => 'required')) }}
            {{ Form::hidden('id_show', '', array('id' => 'id_show',  'placeholder' => 'Id')) }}
         </div>
         <div class="form-group">
           <label for="recipient-name" class="col-form-label">Modelo:</label>
-           {{ Form::text('modelo_show', '', array('id' => 'modelo_show',  'placeholder' => 'Modelo del auto' ,'required' => 'required')) }}
+           {{ Form::text('modelo_show', '', array('id' => 'modelo_show', 'class'=>'form-control', 'placeholder' => 'Escribe el modelo del auto' ,'required' => 'required')) }}
            
         </div>
          <div class="form-group">
           <label for="recipient-name" class="col-form-label">Precio:</label>
-           {{ Form::text('precio_show', '', array('id' => 'precio_show',  'placeholder' => 'Precio del auto' ,'required' => 'required')) }}
+           {{ Form::text('precio_show', '', array('id' => 'precio_show','class'=>'form-control', 'placeholder' => 'Escribe el precio del auto' ,'required' => 'required')) }}
            
         </div>
         
-         <div class="form-group">
-          <label for="recipient-name" class="col-form-label">Imagen anterior:</label>
-           <img src="" height="200px" width="200px;" id="foto_show"/>
+        <div class="form-group">
+          <label for="recipient-name" class="col-form-label">Nota: Opcional elegir nuevafoto</label>
+           
            
         </div>
         <div class="form-group">
-          <label for="recipient-name" class="col-form-label">Foto:</label>
+          <label for="recipient-name" class="col-form-label">Elige una nueva Foto:</label>
            {{ Form::file('foto_show2', array('id' => 'foto_show2')) }}
            
         </div>
@@ -207,8 +212,8 @@ $(document).ready(function() {
                    "sortDescending":    "Ordenación descendente"
                }
            },
-           "lengthMenu":        [[5, 10, 20, 25, 50, -1], [5, 10, 20, 25, 50, "Todos"]],
-           "iDisplayLength":    5,
+           "lengthMenu":        [[ 10, 20, 25, 50, -1], [ 10, 20, 25, 50, "Todos"]],
+           "iDisplayLength":    10,
            "bJQueryUI":        false,
            "columns" : [
                {"data": 0},

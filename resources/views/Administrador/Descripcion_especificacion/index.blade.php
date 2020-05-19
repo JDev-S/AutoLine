@@ -2,10 +2,14 @@
 @section('contenido')
 
 <div class="container justify-content-center align-items-center">
-  <br><br>
+  <br>
+    <h2 style="text-align:center;">Administración de especificaciones  de los autos</h2>
   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#insertModal">Agregar</button>
 
-  <div class="table-responsive" >
+  <div class="table-responsive" style=" border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;">
       <table  id="table_id"class="table table-condensed table-striped table-bordered" style="width:auto">
           <thead>
           <tr>
@@ -92,9 +96,7 @@
        ?>
 
      {{ Form::open(array('action' => 'Descripcion_especificacionController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
-
-         
-       
+ 
          <div class="form-group">
            <label for="recipient-name" class="col-form-label">Autos:</label>
            <select class="form-control" name="auto_show" required>
@@ -208,8 +210,8 @@ $(document).ready(function() {
                    "sortDescending":    "Ordenación descendente"
                }
            },
-           "lengthMenu":        [[5, 10, 20, 25, 50, -1], [5, 10, 20, 25, 50, "Todos"]],
-           "iDisplayLength":    5,
+           "lengthMenu":        [[ 10, 20, 25, 50, -1], [ 10, 20, 25, 50, "Todos"]],
+           "iDisplayLength":    10,
            "bJQueryUI":        false,
            "columns" : [
                {"data": 0},

@@ -1,11 +1,5 @@
 @extends('welcome')
-@section('gifs')
-<div id="loading">
-  <div id="loading-center">
-      <img src="/images/loader.gif" alt="img_gif">
- </div>
-</div>
-@stop
+
 @section('head')
 <?php
  $paginacion= $numero_autos[0]->numero_autos/7;

@@ -1,14 +1,8 @@
 @extends('welcome')
-@section('gifs')
-<div id="loading">
-  <div id="loading-center">
-      <img src="/images/loader.gif" alt="img_gif">
- </div>
-</div>
-@stop
+
 @section('head')
 <?php
- $paginacion= $numero_autos[0]->numero_autos/7;
+ $paginacion= $numero_autos[0]->numero_autos/15;
                    $paginacion=ceil($paginacion); 
                     if($pagina==1)
                     {
@@ -41,24 +35,22 @@
 <section class="product-listing page-section-ptb">
  <div class="container">
   <div class="row">
-   <div class="col-lg-1 col-md-1">
 
-     </div>
      <div class="col-lg-9 col-md-8">
-       <div class="sorting-options-main"> 
         <div class="row">
-
-        
-
+         <div class="col-lg-7">
+           <div class="price-search">
+            <span>Buscar auto</span>
+             <div class="search">
+              <i class="fa fa-search"></i>
+             <input type="search" class="form-control placeholder" id="buscar"  name="buscar" placeholder="Buscar....">
+            </div>
+           </div>
+         </div>
         </div> 
         <div class="row sorting-options">
           <div class="col-lg-5">
-           <div class="change-view-button">
-             <a class="active" href="/vehiculos2"> <i class="fa fa-th"></i> </a>
-             <a href="/vehiculos"> <i class="fa fa-list-ul"></i> </a>
-           </div>
           </div> 
-
         </div>
        </div>
         <div class="row">
@@ -92,7 +84,7 @@
            <div class="pagination-nav d-flex justify-content-center">
                <ul class="pagination">
                    <?php
-                   $paginacion= $numero_autos[0]->numero_autos/7;
+                   $paginacion= $numero_autos[0]->numero_autos/15;
                    $paginacion=ceil($paginacion); 
                    
                    if($pagina>1)
@@ -112,7 +104,7 @@
                
                    
 
-                   for($i=1;$i<=ceil($numero_autos[0]->numero_autos/7);$i++)
+                   for($i=1;$i<=ceil($numero_autos[0]->numero_autos/15);$i++)
                    {
                        if($i==$pagina)
                        {
@@ -138,4 +130,49 @@
      </div>
   </div>
 </section>
+
+@section('scripts')
+<script>
+/*var elInput = document.getElementById('buscar');
+elInput.addEventListener('keyup', function(e) {
+  var keycode = e.keyCode || e.which;
+  if (keycode == 13) {
+    alert("Enter!");
+  }
+});*/
+    
+ $.ajaxSetup({
+
+        headers: {
+
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+
+        }
+
+    });
+
+$("#buscar").on('keyup', function (e) {
+  var keycode = e.keyCode || e.which;
+    if (keycode == 13) {
+        //);
+         var palabra=$("#buscar").val();
+        location.href="/vehiculo_buscar?buscar="+palabra;
+        
+   
+  /*  var token = '{{csrf_token()}}';// ó $("#token").val() si lo tienes en una etiqueta html.
+    var data={buscar:palabra,_token:token};
+    $.ajax({
+        type: "post",
+        url: "/busqueda",
+        data: data,
+        success: function (msg) {
+                alert("Se ha realizado el POST con exito "+msg);
+        }
+    });*/
+    }
+});
+    
+</script>
 @stop
+@stop
+

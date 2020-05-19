@@ -8,7 +8,7 @@
 <meta name="author" content="potenzaglobalsolutions.com" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <title>Auto Line</title>
-
+@yield('styles')
 <!-- Favicon -->
 <link rel="shortcut icon" href="/images/favicon.ico" />
 
@@ -213,57 +213,79 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 @yield('contenido')   
 
-<footer class="footer-3 footer-topbar light page-section-pt">
+<footer class="footer bg-3 bg-overlay-black-90">
   <div class="container">
-  <div class="row top">
-    <div class="col-lg-3 col-md-12">
-      <img class="img-fluid" id="logo_footer_dark" src="/images/logo_skin-default.png" alt="">
-    </div>
-    <div class="col-lg-5 col-md-12">
-      <div class="footer-nav text-lg-right text-center">
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/vehiculos">Vehículos</a></li>
-          <li><a href="/contacto">Contáctanos</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-12">
-      <div class="social text-lg-right text-center">
-          <ul>
-            <li><a href="https://www.facebook.com/autolinesalamanca/"> <i class="fa fa-facebook"></i> </a></li>
-            <li><a href="https://www.instagram.com/autolinegto/?hl=es-la"> <i class="fa fa-instagram"></i> </a></li>
-            <!--<li><a href="#"> <i class="fa fa-pinterest-p"></i> </a></li>
-            <li><a href="#"> <i class="fa fa-dribbble"></i> </a></li>
-            <li><a href="#"> <i class="fa fa-vimeo"></i> </a></li>
-            <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>-->
-          </ul>
-       </div>      
-    </div>
-   </div>
-    </div>
-    <div class="copyright">
-     <div class="container">
-      <div class="row">
-       <div class="col-lg-6 col-md-12">
-         <div class="text-lg-left text-center">
-         <p>©Copyright <?php
-                        $fecha = date('Y');
-                        echo $fecha;?> 
-         AUTOLINE Desarrollado por <a href="https://jdevs.com.mx/" target="_blank">JDev-S</a></p>
+    <div class="row">
+     <div class="col-md-12">
+      <div class="social">
        </div>
       </div>
-      <div class="col-lg-6 col-md-12">
-        <ul class="list-inline text-lg-right text-center">
-          <li><a href="/contacto">Contáctanos </a>  </li> 
-          <li><a href="#"> </a> </li> 
-          <li><a href="#"> </a></li>
-        </ul>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="about-content">
+          <img class="img-fluid" id="logo-footer" src="images/logo-light.png" alt="">
+        </div>
+        <div class="address">
+          <ul>
+            <li> <i class="fa fa-map-marker"></i><span>Blvd Faja de Oro #1217 Salamanca (México)</span> </li>
+            <li> <i class="fa fa-phone"></i><span>464 643 8260</span> </li>
+            <li> <i class="fa fa-envelope-o"></i><span>support@website.com</span> </li>
+          </ul>
+        </div>
       </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="usefull-link">
+        <h6 class="text-white">Links rápidos</h6>
+          <ul>
+            <li><a href="/"><i class="fa fa-angle-double-right"></i>Inicio</a></li>
+            <li><a href="/vehiculos"><i class="fa fa-angle-double-right"></i> Vehículos</a></li>
+            <li><a href="/contacto"><i class="fa fa-angle-double-right"></i> Contacto</a></li>
+            <li><a href="/contatco"><i class="fa fa-angle-double-right"></i> Cotizador</a></li>
+          </ul>
+        </div> 
+      </div>
+      <div class="col-lg-3 col-md-6">
+       <div class="recent-post-block">
+
+        <h6 class="text-white">Redes sociales</h6>
+          <div class="recent-post">
+            <div >
+                <span class="post-date"><i class="fa fa-facebook fa-2x"></i>&nbsp;&nbsp;&nbsp;Facebook</span>
+            </div>
+         </div>
+         <div class="recent-post">
+            <div >
+                <span ><i class="fa fa-instagram fa-2x" ></i>&nbsp;&nbsp;&nbsp;Instagram</span>
+            </div>
+         </div>
+
+       </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="news-letter">
+            <h6 class="text-white">Ubicacion </h6>
+            <div class="google-map" ><iframe frameborder="0" style="border:0; width:300px; height:300px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBU1lZtClzanCeW37ILQ2UB70X-VatLSps&q=place_id:ChIJeQ9LfKuFLIQRS4yVns4_O6A" allowfullscreen=""></iframe></div>
+        </div> 
+      </div>
+    </div>
+    <hr />
+    <div class="copyright">
+     <div class="row">
+      <div class="col-lg-6 col-md-10">
+       <div class="text-lg-left text-center">
+          <p style="font-size:16px;">©Copyright <?php
+                        $fecha = date('Y');
+                        echo $fecha;?> 
+          Desarrollado por <a href="https://jdevs.com.mx/" target="_blank">JDev-S</a></p>
+       </div>
+      </div>
+
      </div>
     </div>
-   </div>
+  </div>
 </footer>
+ 
 
  <!--=================================
  footer -->

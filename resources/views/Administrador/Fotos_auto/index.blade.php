@@ -2,10 +2,14 @@
 @section('contenido')
 
 <div class="container justify-content-center align-items-center">
-  <br><br>
+  <br>
+    <h2>Administración de fotos de los autos</h2>
   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#insertModal">Agregar</button>
 
-  <div class="table-responsive" >
+  <div class="table-responsive" style=" border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;">
       <table  id="table_id"class="table table-condensed table-striped table-bordered" style="width:auto">
           <thead>
           <tr>
@@ -24,7 +28,7 @@
                   <td>
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-id="<?php echo $auto->id_foto;?>" data-foto="<?php echo $auto->foto;?>">Eliminar</button>
                       
-                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-foto="<?php echo $auto->foto;?>"   data-id="<?php echo $auto->id_foto;?>">Editar</button>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-foto="<?php echo $auto->foto;?>"   data-id="<?php echo $auto->id_foto;?>"  data-id2="<?php echo $auto->id_auto;?>" >Editar</button>
 
                   </td>
 
@@ -125,11 +129,16 @@
       {{ Form::open(array('action' => 'Fotos_autoController@actualizar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
         <div class="form-group">
            {{ Form::hidden('id_show', '', array('id' => 'id_show',  'placeholder' => 'Id')) }}
+            {{ Form::hidden('id_show2', '', array('id' => 'id_show2',  'placeholder' => 'Id')) }}
             
         </div>
+                 <div class="form-group">
+           <label for="recipient-name" class="col-form-label">Opcional cambiar la foto:</label>
+          
+         </div>
          <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Foto:</label>
-         {!! Form::textarea('foto_show', null, ['id' => 'foto_show', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','required' => 'required']) !!}
+           <label for="recipient-name" class="col-form-label">Elegir foto:</label>
+           {{ Form::file('foto_show', array('id' => 'foto_show')) }}
          </div>
 
         <div class="modal-footer">
@@ -149,13 +158,14 @@
 $('#editModal').on('show.bs.modal', function (event) {
 var button = $(event.relatedTarget)
 var id_foto = button.data('id')
-var foto=button.data('foto')
+var id_auto = button.data('id2')
+
 
 
 
 var modal = $(this)
 modal.find('#id_show').val(id_foto)
-modal.find('#foto_show').val(foto)
+modal.find('#id_show2').val(id_auto)
 
 
 });
@@ -189,8 +199,8 @@ $(document).ready(function() {
                    "sortDescending":    "Ordenación descendente"
                }
            },
-           "lengthMenu":        [[5, 10, 20, 25, 50, -1], [5, 10, 20, 25, 50, "Todos"]],
-           "iDisplayLength":    5,
+           "lengthMenu":        [[ 10, 20, 25, 50, -1], [ 10, 20, 25, 50, "Todos"]],
+           "iDisplayLength":    10,
            "bJQueryUI":        false,
            "columns" : [
                {"data": 0},

@@ -16,14 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','AutoController@mostrar_autos_index');
 
+//Route::get('/vehiculos2/{pagina?}','AutoController@mostrar_autos');
 Route::get('/vehiculos/{pagina?}','AutoController@mostrar_autos');
-Route::get('/vehiculos2/{pagina?}','AutoController@mostrar_autos2');
 
 Route::get('/vehiculo/{id_auto}','AutoController@mostrar_unico_carro');
 
-/*Route::get('/contacto', function () {
-    return view('/principal/contacto');
-});*/
+Route::get('/live', function () {
+    return view('/principal/live');
+});
 
 Route::get('/contacto','HorarioController@mostrar_horario');
 
@@ -92,6 +92,8 @@ Route::post('/Admin_horario_editar','HorarioController@actualizar');
 /////////////////////////////////////////////////////////////////////77
 /*Mandar correo desde contacto*/
 Route::post('/contactar', 'EmailController@contact')->name('contact');
+
+Route::post('/cotizar', 'EmailController@cotizar')->name('cotizar');
 /*Mandar correo desde cotizador*/
 
 /*Logueo del Administrador*/
@@ -103,4 +105,8 @@ Route::post('/Admin_consola', 'LoguinController@login')->name('logueo');
 
 Route::get('/cerrar_sesion','LoguinController@Logout');
 
+/*Para realizar busqueda de un auto*/
+Route::get('/vehiculo_buscar','AutoController@busqueda')->name('vehiculo_buscar');
+/*Para la consola de admin*/
+Route::post('/busqueda', 'AutoController@busqueda_tabla')->name('busqueda');
 

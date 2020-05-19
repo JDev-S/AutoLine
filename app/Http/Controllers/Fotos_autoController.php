@@ -64,12 +64,10 @@ class Fotos_autoController extends Controller
 	public function actualizar(Request $input)
 	{	    
 		    $id_foto=$input['id_show'];
-            $foto = $input['foto_show'];
-       
-        //UPDATE `fotos_auto` SET `foto` = 'img34' WHERE `fotos_auto`.`id_foto` = 1;
-        $query=DB::update("update fotos_auto set foto='$foto' where id_foto=?",[$id_foto]);
-        return redirect()->action('Fotos_autoController@fotos_autos_mostrar')->withInput();
-
+            $id_auto=$input['id_show2'];
+            $query2=DB::select("select *  FROM auto WHERE id_auto='$id_auto'");
+    
+         echo($id_foto.'    '.$id_auto.'    '.$foto_show);
 	}
 }
 

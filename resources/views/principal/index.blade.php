@@ -125,7 +125,7 @@
     <div class="row about custom-block-2">
       <div class="col-md-6">
         <h2>Acerca de</h2> 
-        <p>Concesionario  en Salamanca Gto. (México)</p>
+        <p> Bienvenidos a AutoLine la mejor concesionaria en Salamanca Gto. (México), donde  podras encontrar las mejores marcas del mundo a tu alcance, cotizaciones sin compromiso, precios accesibles ayudandote a que tengas el carro de tus sueños y con un plan de financiamiento  flexible que se adapta a tu estilo de vida</p>
       </div>
       <div class="col-md-6">
         <img class="img-fluid center-block" src="/images/11.png" alt="">
@@ -138,30 +138,30 @@
            <i class="glyph-icon flaticon-beetle"></i>
          </div> 
          <div class="content">
-          <h5>All brands</h5>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem acantium doloremque laudantium.</p>
+          <h5>Las mejores marcas</h5>
+          <p>Tenemos para ti las mejores marcas del mundo a tu alcance para que no tengas que salir de tu ciudad.</p>
          </div>
         </div>
       </div>
       <div class="col-md-3">
         <div class="feature-box-2 box-hover">
          <div class="icon">
-           <i class="glyph-icon flaticon-interface-1"></i>
+           <i class="glyph-icon flaticon-pencil"></i>
          </div> 
          <div class="content">
-          <h5>Free Support</h5>
-          <p>Omnis sed ut perspiciatis unde iste natus error sit voluptatem acantium doloremque laudantium.</p>
+          <h5>Cotizaciones</h5>
+          <p>Cotizaciones sin compromiso! Haz uso de nuestra herramienta de cotizacion que tenemos especialmente para ti.</p>
          </div>
         </div>
       </div>
       <div class="col-md-3">
         <div class="feature-box-2 box-hover">
          <div class="icon">
-           <i class="glyph-icon flaticon-key"></i>
+           <i class="glyph-icon flaticon-calculator"></i>
          </div> 
          <div class="content">
-          <h5>Dealership</h5>
-          <p>Error sed ut perspiciatis unde omnis iste natus sit voluptatem acantium doloremque laudantium.</p>
+          <h5>Precios accesibles</h5>
+          <p> Encontrar el auto de tus sueños ahora es posible! Acércate a nosotros, tenemos precios fabulosos.</p>  
          </div>
         </div>
       </div>
@@ -171,8 +171,8 @@
            <i class="glyph-icon flaticon-wallet"></i>
          </div> 
          <div class="content">
-          <h5>Affordable</h5>
-          <p>Perspiciatis sed ut unde omnis iste natus error sit voluptatem acantium doloremque laudantium.</p>
+          <h5>Servicios financieros</h5>
+          <p>Plan de financiamiento flexible que se adapta a tu estilo de vida, para que puedas estrenar el auto de tus sueños.</p>
          </div>
         </div>
       </div>

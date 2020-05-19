@@ -3,9 +3,12 @@
 
 
 <div class="container justify-content-center align-items-center">
-  <br><br>
-
-  <div class="table-responsive" >
+  <br>
+<h2>Administración del horario</h2>
+  <div class="table-responsive" style=" border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;">
       <table  id="table_id"class="table table-condensed table-striped table-bordered" style="width:auto">
           <thead>
           <tr>
@@ -90,6 +93,7 @@ modal.find('#hora2_show').val(hora_final)
 
 $(document).ready(function() {
  var oTable = $('#table_id').dataTable( {
+   
    "scrollX": true,
    "autoWidth": false,
     "responsive": true,
@@ -117,8 +121,8 @@ $(document).ready(function() {
                    "sortDescending":    "Ordenación descendente"
                }
            },
-           "lengthMenu":        [[5, 10, 20, 25, 50, -1], [5, 10, 20, 25, 50, "Todos"]],
-           "iDisplayLength":    5,
+           "lengthMenu":        [[ 10, 20, 25, 50, -1], [ 10, 20, 25, 50, "Todos"]],
+           "iDisplayLength":    10,
            "bJQueryUI":        false,
            "columns" : [
                {"data": 0},
@@ -129,8 +133,11 @@ $(document).ready(function() {
            "dom": "<'row'<'col-sm-7 col-md-4'l><'col-sm-6 col-md-3'f>>" +
                   "<'row'<'col-sm-13 col-md-11' tr>>" +
                   "<'row'<'col-sm-7 col-md-4'i><'col-sm-6 col-md-3'p>>",
+                  
 
  });
+       
+    
        $('label').addClass('form-inline');
        $('select, input[type="search"]').addClass('form-control input-sm');
  

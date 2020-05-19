@@ -3,9 +3,12 @@
 
 
 <div class="container justify-content-center align-items-center">
-  <br><br>
-
-  <div class="table-responsive" >
+  <br>
+  <h2>Ventana de clientes</h2>
+  <div class="table-responsive" style=" border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;">
       <table  id="table_id"class="table table-condensed table-striped table-bordered" style="width:auto">
           <thead>
           <tr>
@@ -20,8 +23,8 @@
           @foreach($contacto as $auto)
               <tr>
                   <td>{{ $auto->nombre}}</td>
-                  <td><a href="mailto:{{$auto->correo}}">{{ $auto->correo}}</a></td>
-                  <td><a href="tel:{{$auto->telefono}}">{{ $auto->telefono}}</a></td>
+                  <td><a href="mailto:{{$auto->correo}}" target="_blank">{{ $auto->correo}}</a></td>
+                  <td><a href="tel:{{$auto->telefono}}" target="_blank">{{ $auto->telefono}}</a></td>
                   <td>{{ $auto->precio}}</td>
                   <td>{{ $auto->carro}}</td>
               </tr>
@@ -67,8 +70,8 @@ $(document).ready(function() {
                    "sortDescending":    "Ordenación descendente"
                }
            },
-           "lengthMenu":        [[5, 10, 20, 25, 50, -1], [5, 10, 20, 25, 50, "Todos"]],
-           "iDisplayLength":    5,
+           "lengthMenu":        [[ 10, 20, 25, 50, -1], [ 10, 20, 25, 50, "Todos"]],
+           "iDisplayLength":    10,
            "bJQueryUI":        false,
            "columns" : [
                {"data": 0},

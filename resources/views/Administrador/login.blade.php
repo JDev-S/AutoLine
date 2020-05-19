@@ -1,11 +1,5 @@
 @extends('welcome')
-@section('gifs')
-<div id="loading">
-  <div id="loading-center">
-      <img src="/images/loader.gif" alt="img_gif">
- </div>
-</div>
-@stop
+
 @section('contenido')
 <section class="login-form page-section-ptb">
   <div class="container">
