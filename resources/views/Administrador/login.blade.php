@@ -19,11 +19,11 @@
           <div class="form-group">
             
              <label for="name">Nombre de usuario* </label>
-               <input id="email" class="form-control" type="email" placeholder="Nombre de usuario" name="email" data-constraints="@Required">
+               <input id="email" class="form-control" type="email"  name="email" required>
          </div>
          <div class="form-group">
              <label for="Password">Contraseña* </label>
-             <input id="pass" class="form-control" type="password" placeholder="Password" name="pass" data-constraints="@Required">
+             <input id="pass" class="form-control" type="password"  name="pass" required>
          </div> 
               <button id="submit" name="submit" type="submit" value="Send" class="button red"> Iniciar sesión!! </button>
         </form>

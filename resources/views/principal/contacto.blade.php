@@ -24,16 +24,20 @@
             <p>¡Sería genial saber de ti! Si tiene alguna pregunta, no dude en enviarnos un mensaje. ¡Esperamos tener noticias suyas! Respondemos las 24 horas!</p>
             <div class="contact-form">
                <div class="form-group">
-                 <input id="nombre_completo" type="text" placeholder="Nombre completo*" class="form-control"  name="nombre_completo" data-constraints="@Required">
+                   <label>Nombre completo*</label>
+                 <input id="nombre_completo" type="text" class="form-control"  name="nombre_completo" required>
              </div> 
                <div class="form-group">
-                 <input type="email" id="email" placeholder="Correo*" class="form-control" name="email" data-constraints="@Required">
+                   <label>Correo*</label>
+                 <input type="email" id="email" class="form-control" name="email" required>
                 </div>
                 <div class="form-group">
-                  <input type="text" id="telefono" placeholder="Teléfono*" class="form-control" name="telefono" data-constraints="@Required">
+                    <label>Teléfono*</label>
+                  <input type="text" id="telefono"  class="form-control" name="telefono" required>
                 </div>
                  <div class="form-group">
-                   <textarea class="form-control input-message" placeholder="Comentario*" rows="7" id="descripcion" name="descripcion" data-constraints="@Required"></textarea>
+                     <label>Comentario*</label>
+                   <textarea class="form-control input-message" rows="7" id="descripcion" name="descripcion" required></textarea>
               </div>
                  <input type="hidden" name="action" value="sendEmail"/>
                  <button id="submit" name="submit" type="submit" value="Send" class="button red"> Enviar!! </button>

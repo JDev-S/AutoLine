@@ -32,7 +32,15 @@ class EmailController extends Controller
     
     
         public function cotizar(Request $request){
-        /*MENSAJE PARA NOSOTROS*/
+            
+        $id_auto=$request['id_auto'];
+        $correo=$request['correo'];
+        $telefono=$request['telefono'];
+        $nombre=$request['nombre'];
+        $precio=$request['precio'];
+        $auto=$request['auto'];
+            
+                        /*MENSAJE PARA NOSOTROS*/
         $subject = 'Cotizacion';
         $for = "juanjesuspadrondiaz@gmail.com";
         Mail::send('/principal/correo_cotizar',$request->all(), function($msj) use($subject,$for){
@@ -60,6 +68,9 @@ class EmailController extends Controller
         $url="http://crautos.mx/";
         return redirect()->to($url);
             
+            
+            
+
     }
 }
  

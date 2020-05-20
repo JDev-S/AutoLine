@@ -214,27 +214,28 @@
                 <h5>Realizar cotización</h5>
                 <div class="form-group">
                     <input id="id_auto" name="id_auto" type="hidden" value='{{$oAutos->id_auto}}'>
-                    <input id="auto" name="auto" type="hidden" value='{{$oAutos->nombre}}'>     
+                    <input id="auto" name="auto" type="hidden" value='{{$oAutos->nombre}}'>
+                    <input id="precio" name="precio" type="hidden" value='{{$oAutos->precio2}}'>  
                 </div>
                    
                    <div class="form-group">
                    <label>Nombre*</label>
-                   <input type="text" class="form-control" placeholder="Nombre completo"  id="nombre" name="nombre" data-constraints="@Required">
+                   <input type="text" class="form-control"  id="nombre" name="nombre" required>
                 </div>
                    
                    
                  <div class="form-group">
                     <label>Correo*</label>
-                    <input type="email" class="form-control" placeholder="ejemplo@gmail.com" id="correo" name="correo" data-constraints="@Required">
+                    <input type="email" class="form-control"  id="correo" name="correo" required>
                 </div>
                  <div class="form-group">
                     <label>Teléfono*</label>
-                    <input type="text" class="form-control" placeholder="Teléfono" id="telefono" name="telefono" data-constraints="@Required">
+                    <input type="text" class="form-control"  id="telefono" name="telefono" required>
                 </div>
                 <div class="form-group">
                     <label>Costo del auto*</label>
                    
-                    <input type="text" class="form-control"  value='{{$oAutos->precio}}' disabled id="precio" name="precio" data-constraints="@Required">
+                    <input type="text" class="form-control" disabled  value='{{$oAutos->precio}}'  id="precio" name="precio" required>
                    
                 </div>
            <!-- <div class="options">
