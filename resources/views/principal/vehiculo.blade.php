@@ -213,6 +213,9 @@
                 <h5>Realizar cotización</h5>
                 <div class="form-group">
                    <label>Nombre*</label>
+                    <input id="id_auto" name="id_auto" type="hidden" value='{{$oAutos->id_auto}}'>
+                    <input id="auto" name="auto" type="hidden" value='{{$oAutos->nombre}}'>
+                    
                    <input type="text" class="form-control" placeholder="Nombre completo" required id="nombre" name="nombre">
                 </div>
                  <div class="form-group">
@@ -287,17 +290,21 @@ car-details -->
  footer -->
 
 
-<script>
+<script >
 /*DATOS DE ENTRADA*/
 function Cotizacion() {
 var nombre = document.getElementById("nombre").value;   
 var correo  =document.getElementById("correo").value; 
 var telefono = document.getElementById("telefono").value; 
+var id_auto = document.getElementById("id_auto").value; 
+var auto = document.getElementById("auto").value; 
+
 //var historial=   $('#historial').val();
 //var ingresos=$('#ingresos').val();
 alert(nombre+" "+correo+" "+telefono);
+alert(id_auto+"  "+auto);
 //alert("Imprimo historial :"+historial+"  Imprimo ingresos"ingresos);
-    alert($('input:checkbox[name=ingresos]:checked').val());
+    //alert($('input:checkbox[name=ingresos]:checked').val());
 var plazo36=36;
 var plazo12=12;
 var plazo48=48;
@@ -307,6 +314,8 @@ var precio=document.getElementById("precio").value;//250000;
 var enganche=document.getElementById("enganche").value;
     alert(enganche);
 var tmsi=1.74;//el valor del checkbox
+    //1.2 ->1
+    //1.6 ->2
 
 /*CALCULAR TOTAL A FINANCIAR*/
 var financiacion=precio-enganche;
@@ -317,8 +326,6 @@ var tasi=tmsi*12;
 var taci=tasi*1.16;
 var tmci=taci/12;
 
-    
-    
     
 /*CALCULAR MENSUALIAD*/
 var mensualidad12=financiacion*(((tmci/100)*Math.pow((1+(tmci/100)),plazo12))/(Math.pow((1+(tmci/100)),plazo12)-1));
@@ -331,13 +338,14 @@ var mensualidad48=financiacion*(((tmci/100)*Math.pow((1+(tmci/100)),plazo48))/(M
 //document.getElementById("mensualidad24").innerHTML ="24 Pagos de : $"+ mensualidad24;
 //document.getElementById("mensualidad36").innerHTML = "36 Pagos de : $"+mensualidad36;
 //document.getElementById("mensualidad48").innerHTML = "48 Pagos de : $"+mensualidad48;
-    alert("12 Pagos de : $"+mensualidad12
-+"\n \n 24 Pagos de : $"+mensualidad24
-+"\n \n  36 Pagos de : $"+mensualidad36
-+"\n \n 48 Pagos de : $"+mensualidad48);
+   
+    //alert("12 Pagos de : $"+mensualidad12
+//+"\n \n 24 Pagos de : $"+mensualidad24
+//+"\n \n  36 Pagos de : $"+mensualidad36
+//+"\n \n 48 Pagos de : $"+mensualidad48);
 
    var token = '{{csrf_token()}}';// ó $("#token").val() si lo tienes en una etiqueta html.
-    var data={nombre:nombre,correo:correo,telefono:telefono,precio:precio,enganche:enganche,financiacion:financiacion,mensualidad12:mensualidad12,mensualidad24:mensualidad24,mensualidad36:mensualidad36,mensualidad48:mensualidad48,_token:token};
+    var data={nombre:nombre,correo:correo,telefono:telefono,precio:precio,enganche:enganche,financiacion:financiacion,mensualidad12:mensualidad12,mensualidad24:mensualidad24,mensualidad36:mensualidad36,mensualidad48:mensualidad48,id_auto:id_auto,auto:auto,_token:token};
    /* $.ajax({
         type: "post",
         url: "/cotizar",

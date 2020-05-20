@@ -44,7 +44,7 @@ class Descripcion_especificacionController extends Controller
         
 
         $query=DB::insert('insert into descripcion_especificcacion (id_especificacion,id_auto,descripcion) values ( ?, ?, ?)', [ $id_especificacion,$id_auto,$descripcion]);
-        return redirect()->action('Descripcion_especificacionController@descripcion_especificacion_mostrar')->withInput();
+        //return redirect()->action('Descripcion_especificacionController@descripcion_especificacion_mostrar')->withInput();
 	
 	}
 
@@ -64,4 +64,21 @@ class Descripcion_especificacionController extends Controller
         return redirect()->action('Descripcion_especificacionController@descripcion_especificacion_mostrar')->withInput();
 
 	}
+    
+    
+    public function especificaciones_faltantes(Request $input)
+    {
+        /*select especificacion.id_especificacion,especificacion.especificacion from especificacion where especificacion.id_especificacion not in (SELECT descripcion_especificcacion.id_especificacion from descripcion_especificcacion where descripcion_especificcacion.id_auto=26)*/
+         $id_auto=$input['id_auto'];
+        //echo $id_auto;
+       
+         $query=DB::select("select especificacion.id_especificacion,especificacion.especificacion from especificacion where especificacion.id_especificacion not in (SELECT descripcion_especificcacion.id_especificacion from descripcion_especificcacion where descripcion_especificcacion.id_auto=$id_auto)");
+        
+       
+      $json= json_encode($query);
+         
+        return response()->json([$json]);
+        
+        
+    }
 }

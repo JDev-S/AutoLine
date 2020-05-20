@@ -109,4 +109,5 @@ Route::get('/cerrar_sesion','LoguinController@Logout');
 Route::get('/vehiculo_buscar','AutoController@busqueda')->name('vehiculo_buscar');
 /*Para la consola de admin*/
 Route::post('/busqueda', 'AutoController@busqueda_tabla')->name('busqueda');
-
+/*Para la consola en Descripcion_especificacion*/
+Route::post('/esp_faltantes', 'Descripcion_especificacionController@especificaciones_faltantes')->name('esp_faltantes');

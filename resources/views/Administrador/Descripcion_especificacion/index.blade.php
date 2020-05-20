@@ -10,7 +10,7 @@
   border-right-style: solid;
   border-bottom-style: solid;
   border-left-style: solid;">
-      <table  id="table_id"class="table table-condensed table-striped table-bordered" style="width:auto">
+      <table  id="table_id"class="table table-condensed table-striped table-bordered" style="margin: 0 auto;">
           <thead>
           <tr>
           <th>Auto</th>
@@ -85,9 +85,7 @@
      </div>
      <div class="modal-body">
      <?php
-           $query = "select * from especificacion ";
-
-       $data=DB::select($query);
+          
          
        $query2 = "select concat(auto.marca,' ',auto.modelo)as nombre,auto.id_auto from auto ";
 
@@ -95,11 +93,11 @@
 
        ?>
 
-     {{ Form::open(array('action' => 'Descripcion_especificacionController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
+     {{ Form::open(array('action' => 'Descripcion_especificacionController@insertar', 'method' => 'post','id'=>'descripcion_especificacion','name'=>'descripcion_especificacion')) }}
  
          <div class="form-group">
            <label for="recipient-name" class="col-form-label">Autos:</label>
-           <select class="form-control" name="auto_show" required>
+           <select class="form-control" name="auto_show" required  id="auto_show" >
            <option value="" disabled selected>Elige un auto</option>
            @foreach ($data2 as $item)
            <option value="{{ $item->id_auto }}" > {{ $item->nombre }} </option>
@@ -107,16 +105,12 @@
          </div>
          
          <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Especificaciones:</label>
-           <select class="form-control" name="especificacion_show" required>
-           <option value="" disabled selected>Elige una especificaicon</option>
-           @foreach ($data as $item)
-           <option value="{{ $item->id_especificacion }}" > {{ $item->especificacion }} </option>
-           @endforeach    </select>
+           <label for="recipient-name" class="col-form-label">Especificación:</label>
+          <select id="especificacion_show"  name="especificacion_show" required ></select>
          </div>
          
          <div class="form-group">
-           <label for="recipient-name" class="col-form-label">Descripcion:</label>
+           <label for="recipient-name" class="col-form-label">Descripción:</label>
          {!! Form::textarea('descripcion_show', null, ['id' => 'descripcion_show', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','required' => 'required']) !!}
          </div>
 
@@ -147,7 +141,7 @@
            {{ Form::hidden('id_show', '', array('id' => 'id_show',  'placeholder' => 'Id')) }}
             {{ Form::hidden('id_show2', '', array('id' => 'id_show2',  'placeholder' => 'Id')) }}
         </div>
-         <div class="form-group">
+        <div class="form-group">
            <label for="recipient-name" class="col-form-label">Descripcion:</label>
          {!! Form::textarea('descripcion_show', null, ['id' => 'descripcion_show', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','required' => 'required']) !!}
          </div>
@@ -249,6 +243,52 @@ $('#deleteModal').on('show.bs.modal', function (event) {
  document.forms[0].id_show.value=id
  document.forms[0].id_show2.value=id2
 });
+
+</script>
+
+<script>
+var id_auto="";
+var select = document.getElementById('auto_show');
+select.addEventListener('change',
+  function(){
+    var selectedOption = this.options[select.selectedIndex];
+    //alert(selectedOption.value + ': ' + selectedOption.text);
+    id_auto=selectedOption.value;
+    alert(id_auto);
+    
+       var token = '{{csrf_token()}}';// ó $("#token").val() si lo tienes en una etiqueta html.
+    var data={id_auto:id_auto,_token:token};
+    $.ajax({
+        type: "post",
+        url: "/esp_faltantes",
+        data: data,
+        success: function (msg) {
+            alert("Mensaje enviado"+msg);
+            
+       /*              <div class="form-group">
+           <label for="recipient-name" class="col-form-label">Autos:</label>
+           <select class="form-control" name="auto_show" required  id="auto_show" >
+           <option value="" disabled selected>Elige un auto</option>
+           @foreach ($data2 as $item)
+           <option value="{{ $item->id_auto }}" > {{ $item->nombre }} </option>
+           @endforeach    </select>
+         </div>*/
+            //console.log(msg);
+            var A_especificaciones = JSON.parse(msg);
+            document.getElementById("especificacion_show").innerHTML = '<option value="" disabled selected>Elige una Especificación</option>';
+            //console.log(A_especificaciones);
+            //console.log(A_especificaciones[0]["id_especificacion"]);
+
+
+            for(var i=0; i<A_especificaciones.length;i++)
+            {
+                document.getElementById("especificacion_show").innerHTML +='<option value="'+A_especificaciones[i]["id_especificacion"]+'" >'+A_especificaciones[i]["especificacion"]+'</option>'
+                     console.log(A_especificaciones[i]["id_especificacion"]);
+            }
+        }
+    }); 
+
+  });
 
 </script>
 @stop
