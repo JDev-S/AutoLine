@@ -80,12 +80,14 @@
 <!-- START REVOLUTION SLIDER 5.3.0.2 fullwidth mode -->
   <div id="rev_slider_3_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.0.2">
 <ul>  <!-- SLIDE  -->
+    
     <li data-index="rs-3" data-transition="random-static,random-premium,random" data-slotamount="default,default,default,default" data-hideafterloop="0" data-hideslideonmobile="off"  data-randomtransition="on" data-easein="default,default,default,default" data-easeout="default,default,default,default" data-masterspeed="default,default,default,default"  data-thumb=""  data-rotate="0,0,0,0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
     <!-- MAIN IMAGE -->
         <img src='{{$oAutos->foto}}'  alt="imagen_auto"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
     <!-- LAYERS -->
 
   </li>
+    
 </ul>
 <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> </div>
 </div>
