@@ -209,28 +209,32 @@
             </ul>
             </div>
             <div class="details-form contact-2 details-weight">
-               <form class="gray-form"  method="POST" action={{route('cotizar')}}>
+               <form class="gray-form" method="POST" action={{route('cotizar')}}>
             {{ csrf_field() }}
                 <h5>Realizar cotización</h5>
                 <div class="form-group">
-                   <label>Nombre*</label>
                     <input id="id_auto" name="id_auto" type="hidden" value='{{$oAutos->id_auto}}'>
-                    <input id="auto" name="auto" type="hidden" value='{{$oAutos->nombre}}'>
-                    
-                   <input type="text" class="form-control" placeholder="Nombre completo"  id="nombre" name="nombre" required>
+                    <input id="auto" name="auto" type="hidden" value='{{$oAutos->nombre}}'>     
                 </div>
+                   
+                   <div class="form-group">
+                   <label>Nombre*</label>
+                   <input type="text" class="form-control" placeholder="Nombre completo"  id="nombre" name="nombre" data-constraints="@Required">
+                </div>
+                   
+                   
                  <div class="form-group">
                     <label>Correo*</label>
-                    <input type="email" class="form-control" placeholder="ejemplo@gmail.com" id="correo" name="correo" required>
+                    <input type="email" class="form-control" placeholder="ejemplo@gmail.com" id="correo" name="correo" data-constraints="@Required">
                 </div>
                  <div class="form-group">
                     <label>Teléfono*</label>
-                    <input type="text" class="form-control" placeholder="Teléfono" id="telefono" name="telefono" required>
+                    <input type="text" class="form-control" placeholder="Teléfono" id="telefono" name="telefono" data-constraints="@Required">
                 </div>
                 <div class="form-group">
                     <label>Costo del auto*</label>
                    
-                    <input type="text" class="form-control"  value='{{$oAutos->precio}}' id="precio" name="precio" disabled required>
+                    <input type="text" class="form-control"  value='{{$oAutos->precio}}' disabled id="precio" name="precio" data-constraints="@Required">
                    
                 </div>
            <!-- <div class="options">
