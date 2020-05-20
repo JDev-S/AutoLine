@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use Mail; //Importante incluir la clase Mail, que será la encargada del envío
 
 class EmailController extends Controller
@@ -39,6 +40,14 @@ class EmailController extends Controller
             $msj->subject($subject);
             $msj->to($for);
         });
+            
+        $id_auto=$request['id_auto'];
+        $correo=$request['correo'];
+        $telefono=$request['telefono'];
+        $nombre=$request['nombre'];
+        $precio=$request['precio'];
+            
+        $query=DB::insert('insert into contacto (id_contacto,id_auto,correo,telefono,nombre,precio) values ( ?, ?, ?, ?, ?, ?)', [null, $id_auto,$correo,$telefono,$nombre,$precio]);
         
         /*MENSAJE PARA ELLOS
         $subject = $request['categoria'];
@@ -48,7 +57,8 @@ class EmailController extends Controller
             $msj->subject($subject);
             $msj->to($for);
         });*/
-        return redirect()->back();
+        $url="http://crautos.mx/";
+        return redirect()->to($url);
             
     }
 }

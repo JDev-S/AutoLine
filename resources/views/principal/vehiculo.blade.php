@@ -209,34 +209,31 @@
             </ul>
             </div>
             <div class="details-form contact-2 details-weight">
-               <form class="gray-form">
+               <form class="gray-form"  method="POST" action={{route('cotizar')}}>
+            {{ csrf_field() }}
                 <h5>Realizar cotización</h5>
                 <div class="form-group">
                    <label>Nombre*</label>
                     <input id="id_auto" name="id_auto" type="hidden" value='{{$oAutos->id_auto}}'>
                     <input id="auto" name="auto" type="hidden" value='{{$oAutos->nombre}}'>
                     
-                   <input type="text" class="form-control" placeholder="Nombre completo" required id="nombre" name="nombre">
+                   <input type="text" class="form-control" placeholder="Nombre completo"  id="nombre" name="nombre" required>
                 </div>
                  <div class="form-group">
                     <label>Correo*</label>
-                    <input type="email" class="form-control" placeholder="ejemplo@gmail.com" required id="correo" name="correo">
+                    <input type="email" class="form-control" placeholder="ejemplo@gmail.com" id="correo" name="correo" required>
                 </div>
                  <div class="form-group">
                     <label>Teléfono*</label>
-                    <input type="text" class="form-control" placeholder="Teléfono" required id="telefono" name="correo">
+                    <input type="text" class="form-control" placeholder="Teléfono" id="telefono" name="telefono" required>
                 </div>
                 <div class="form-group">
                     <label>Costo del auto*</label>
                    
-                    <input type="text" class="form-control"  value='{{$oAutos->precio2}}' disabled id="precio" name="precio">
+                    <input type="text" class="form-control"  value='{{$oAutos->precio}}' id="precio" name="precio" disabled required>
                    
                 </div>
-                <div class="form-group">
-                    <label>Enganche* </label>
-                    <input type="text" class="form-control"  value='{{$oAutos->precio2*0.20}}'  required id="enganche"  name="enganche">
-                </div>
-            <div class="options">
+           <!-- <div class="options">
 			<p>Comprobar ingresos</p>
 			<div class="center">
 				<input type="checkbox" id="ingresos" class="noneDysplay" value="1"/>
@@ -250,18 +247,9 @@
 				<input type="checkbox" id="historial" class="noneDysplay" value="2"/>
 				<label for="historial" class="toggle"><span></span></label>    
 			</div>
-		   </div>
-                   <p>
-                   Si el cliente no tiene historial crediticio ni comprobante de ingresos, se solicitará un enganche de mínimo el 35%
-                       <br>
-                       *Mensualidad calculada 
-                       <br>
-                       *Financiamiento Demostrativo
-                       
-                   </p>
+		   </div>-->
                  <div class="form-group">
-                     <button type="submit"  class="button red"
-         onclick="Cotizacion()">
+                     <button type="submit"  class="button red">
    Realizar cotización
  </button>
                   <!--<a class="button red" href="#">Realizar cotización.</a>-->
@@ -288,74 +276,4 @@ car-details -->
  
 <!--=================================
  footer -->
-
-
-<script >
-/*DATOS DE ENTRADA*/
-function Cotizacion() {
-var nombre = document.getElementById("nombre").value;   
-var correo  =document.getElementById("correo").value; 
-var telefono = document.getElementById("telefono").value; 
-var id_auto = document.getElementById("id_auto").value; 
-var auto = document.getElementById("auto").value; 
-
-//var historial=   $('#historial').val();
-//var ingresos=$('#ingresos').val();
-alert(nombre+" "+correo+" "+telefono);
-alert(id_auto+"  "+auto);
-//alert("Imprimo historial :"+historial+"  Imprimo ingresos"ingresos);
-    //alert($('input:checkbox[name=ingresos]:checked').val());
-var plazo36=36;
-var plazo12=12;
-var plazo48=48;
-var plazo24=24;
-    
-var precio=document.getElementById("precio").value;//250000;
-var enganche=document.getElementById("enganche").value;
-    alert(enganche);
-var tmsi=1.74;//el valor del checkbox
-    //1.2 ->1
-    //1.6 ->2
-
-/*CALCULAR TOTAL A FINANCIAR*/
-var financiacion=precio-enganche;
-alert("financiacion" +financiacion);
-
-/*CALCULAR TASAS DE INTERESES*/
-var tasi=tmsi*12;
-var taci=tasi*1.16;
-var tmci=taci/12;
-
-    
-/*CALCULAR MENSUALIAD*/
-var mensualidad12=financiacion*(((tmci/100)*Math.pow((1+(tmci/100)),plazo12))/(Math.pow((1+(tmci/100)),plazo12)-1));
-var mensualidad24=financiacion*(((tmci/100)*Math.pow((1+(tmci/100)),plazo24))/(Math.pow((1+(tmci/100)),plazo24)-1));
-var mensualidad36=financiacion*(((tmci/100)*Math.pow((1+(tmci/100)),plazo36))/(Math.pow((1+(tmci/100)),plazo36)-1));
-var mensualidad48=financiacion*(((tmci/100)*Math.pow((1+(tmci/100)),plazo48))/(Math.pow((1+(tmci/100)),plazo48)-1));
-/*var v1= (tmci/100)*Math.pow((1+(tmci/100)),plazo);*/
-/*var v2= Math.pow((1+(tmci/100)),plazo)-1;*/
-//document.getElementById("mensualidad12").innerHTML = "12 Pagos de : $"+mensualidad12;
-//document.getElementById("mensualidad24").innerHTML ="24 Pagos de : $"+ mensualidad24;
-//document.getElementById("mensualidad36").innerHTML = "36 Pagos de : $"+mensualidad36;
-//document.getElementById("mensualidad48").innerHTML = "48 Pagos de : $"+mensualidad48;
-   
-    //alert("12 Pagos de : $"+mensualidad12
-//+"\n \n 24 Pagos de : $"+mensualidad24
-//+"\n \n  36 Pagos de : $"+mensualidad36
-//+"\n \n 48 Pagos de : $"+mensualidad48);
-
-   var token = '{{csrf_token()}}';// ó $("#token").val() si lo tienes en una etiqueta html.
-    var data={nombre:nombre,correo:correo,telefono:telefono,precio:precio,enganche:enganche,financiacion:financiacion,mensualidad12:mensualidad12,mensualidad24:mensualidad24,mensualidad36:mensualidad36,mensualidad48:mensualidad48,id_auto:id_auto,auto:auto,_token:token};
-   /* $.ajax({
-        type: "post",
-        url: "/cotizar",
-        data: data,
-        success: function (msg) {
-            alert("Mensaje enviado");
-        }
-    }); */
-
-}
-</script>
-
 @stop

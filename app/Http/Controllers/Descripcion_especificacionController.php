@@ -44,7 +44,7 @@ class Descripcion_especificacionController extends Controller
         
 
         $query=DB::insert('insert into descripcion_especificcacion (id_especificacion,id_auto,descripcion) values ( ?, ?, ?)', [ $id_especificacion,$id_auto,$descripcion]);
-        //return redirect()->action('Descripcion_especificacionController@descripcion_especificacion_mostrar')->withInput();
+        return redirect()->action('Descripcion_especificacionController@descripcion_especificacion_mostrar')->withInput();
 	
 	}
 

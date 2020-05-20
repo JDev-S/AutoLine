@@ -160,14 +160,13 @@
 
 
 @yield('contenido')
-
-                        
-                        
                         
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    <p>Copyright © <?php
+                        $fecha = date('Y');
+                        echo $fecha;?> AutoLine. Desarrollado por <a href="https://jdevs.com.mx/">JDev-S</a>.</p>
                                 </div>
                             </div>
                         </div>
