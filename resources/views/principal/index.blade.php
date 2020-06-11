@@ -1,12 +1,30 @@
 @extends('welcome')   
-@section('gifs')
+
+@section('contenido')
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.button3 {background-color: #db2d2e;} /* Red */ 
+
+</style>
+
 <div id="loading">
   <div id="loading-center">
       <img src="/images/loader3.gif" alt="img_gif">
  </div>
 </div>
-@stop
-@section('contenido')
 
 <div id="rev_slider_3_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="car-dealer-05" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
 <!-- START REVOLUTION SLIDER 5.3.0.2 fullwidth mode -->
@@ -14,7 +32,7 @@
 <ul>  <!-- SLIDE  -->
     <li data-index="rs-3" data-transition="random-static,random-premium,random" data-slotamount="default,default,default,default" data-hideafterloop="0" data-hideslideonmobile="off"  data-randomtransition="on" data-easein="default,default,default,default" data-easeout="default,default,default,default" data-masterspeed="default,default,default,default"  data-thumb="/images/100x50_3ecde-01.jpg"  data-rotate="0,0,0,0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
     <!-- MAIN IMAGE -->
-        <img src="/images/3ecde-01.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+        <img src="/images/img_portada.jfif"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
     <!-- LAYERS -->
 
     <!-- LAYER NR. 1 -->
@@ -44,7 +62,7 @@
   <!-- SLIDE  -->
     <li data-index="rs-4" data-transition="random-static,random-premium,random" data-slotamount="default,default,default,default" data-hideafterloop="0" data-hideslideonmobile="off"  data-randomtransition="on" data-easein="default,default,default,default" data-easeout="default,default,default,default" data-masterspeed="default,default,default,default"  data-thumb="/images/100x50_ac5dd-02.jpg"  data-rotate="0,0,0,0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
     <!-- MAIN IMAGE -->
-        <img src="/images/ac5dd-02.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+        <img src="/images/img_portada2.jfif"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
     <!-- LAYERS -->
 
     <!-- LAYER NR. 4 -->
@@ -59,9 +77,6 @@
 <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> </div>
 </div>
 
-   
-
-
 <section class="feature-car gray-bg page-section-ptb">
   <div class="container">
    <div class="row">
@@ -69,8 +84,12 @@
       <div class="section-title">
         
          <h2>Últimos carros añadidos</h2>
+         
          <div class="separator"></div>
+           <a class="button button3"  href="/vehiculos">Inventario Actual</a>
+          
       </div>
+        
     </div>
    </div>
  <div class="row">

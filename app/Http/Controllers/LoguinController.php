@@ -19,7 +19,7 @@ class LoguinController extends Controller
 
         
             
-            if ($email=='autoline@gmail.com' && $contrasenia=='12345') {
+            if ($email=='autoline155@gmail.com' && $contrasenia=='autoline_1217_salamanca') {
 
            //echo 'essta registrado';
             Session::put('email',$email);

@@ -63,7 +63,7 @@
              </div>
              <div class="content">
                <h5>Teléfono </h5>
-                <p>464 643 8260 </p>
+                <p>4641001410</p>
               </div>
             </div>
             <div class="feature-box-3">
@@ -72,7 +72,7 @@
              </div>
              <div class="content">
                <h5>Correo  </h5>
-                <p> support@website.com </p>
+                <p>autolinegto@hotmail.com </p>
               </div>
             </div>
             <div class="opening-hours gray-bg">

@@ -65,9 +65,9 @@
              </div>
              <div class="car-list">
                <ul class="list-inline">
-                 <li><i class="fa fa-registered"></i>{{$auto->anio}}</li>
-                 <li><i class="fa fa-cog"></i> {{$auto->transmision}} </li>
-                 <li><i class="fa fa-shopping-cart"></i>{{$auto->kilometraje}}</li>
+                 <li><i class="fa fa-calendar"></i>{{$auto->anio}}</li>
+                 <li><i class="fa fa-car"></i> {{$auto->transmision}} </li>
+                 <li><i class="fa fa-tachometer"></i>{{$auto->kilometraje}}</li>
                </ul>
             </div>
              <div class="car-content">
@@ -175,4 +175,3 @@ $("#buscar").on('keyup', function (e) {
 </script>
 @stop
 @stop
-

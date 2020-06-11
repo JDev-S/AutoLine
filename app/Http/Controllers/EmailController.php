@@ -37,6 +37,9 @@ class EmailController extends Controller
         $correo=$request['correo'];
         $telefono=$request['telefono'];
         $nombre=$request['nombre'];
+        $materno=$request['materno'];
+        $paterno=$request['paterno'];
+        $apellidos=$paterno.' '.$materno;
         $precio=$request['precio'];
         $auto=$request['auto'];
             
@@ -54,8 +57,11 @@ class EmailController extends Controller
         $telefono=$request['telefono'];
         $nombre=$request['nombre'];
         $precio=$request['precio'];
-            
-        $query=DB::insert('insert into contacto (id_contacto,id_auto,correo,telefono,nombre,precio) values ( ?, ?, ?, ?, ?, ?)', [null, $id_auto,$correo,$telefono,$nombre,$precio]);
+        $materno=$request['materno'];
+        $paterno=$request['paterno'];
+        $apellidos=$paterno.' '.$materno;
+        $nombre_completo=$nombre.' '.$apellidos;
+        $query=DB::insert('insert into contacto (id_contacto,id_auto,correo,telefono,nombre,precio) values ( ?, ?, ?, ?, ?, ?)', [null, $id_auto,$correo,$telefono,$nombre_completo,$precio]);
         
         /*MENSAJE PARA ELLOS
         $subject = $request['categoria'];

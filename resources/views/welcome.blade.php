@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+<!-- Start of Async Callbell Code -->
+<script>
+  window.callbellSettings = {
+    token: "kYVgiWKTRH4SJ3FRwi5Sxj6k"
+  };
+</script>
+<script>
+  (function(){var w=window;var ic=w.callbell;if(typeof ic==="function"){ic('reattach_activator');ic('update',callbellSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Callbell=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://dash.callbell.eu/include/'+window.callbellSettings.token+'.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+<!-- End of Async Callbell Code -->
+    
+<!—- ShareThis BEGIN -—>
+<script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5eceebb5606f5b0012eb5906&product=sticky-share-buttons"></script>
+<!—- ShareThis END -—>
+    
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="keywords" content="HTML5 Template" />
@@ -123,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     padding-right: 15px;
 ">
             <li>
-                <a href="/"><img  src="/images/logo_skin-default.png" alt="logo"> </a>
+                <a href="/"><img  src="/images/logo_skin-default.png" alt="logo" style="width=100px; height=50px;" > </a>
             </li>
         </ul>
         <!-- menu links -->
@@ -199,8 +215,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </li>
             <li><a href="/contacto">Contacto </a>
             </li>
-            <li><a href="/contacto">Cotizador </a>
-            </li>
+            <!--<li><a href="/contacto">Cotizador </a>
+            </li>-->
         </ul>
        </div>
       </div>
@@ -229,8 +245,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="address">
           <ul>
             <li> <i class="fa fa-map-marker"></i><span>Blvd Faja de Oro #1217 Salamanca (México)</span> </li>
-            <li> <i class="fa fa-phone"></i><span>464 643 8260</span> </li>
-            <li> <i class="fa fa-envelope-o"></i><span>support@website.com</span> </li>
+            <li> <i class="fa fa-phone"></i><span>464 100 1410</span> </li>
+            <li> <i class="fa fa-envelope-o"></i><span>autolinegto@hotmail.com</span> </li>
           </ul>
         </div>
       </div>
@@ -241,7 +257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="/"><i class="fa fa-angle-double-right"></i>Inicio</a></li>
             <li><a href="/vehiculos"><i class="fa fa-angle-double-right"></i> Vehículos</a></li>
             <li><a href="/contacto"><i class="fa fa-angle-double-right"></i> Contacto</a></li>
-            <li><a href="/contatco"><i class="fa fa-angle-double-right"></i> Cotizador</a></li>
+            <!--<li><a href="/contatco"><i class="fa fa-angle-double-right"></i> Cotizador</a></li>-->
           </ul>
         </div> 
       </div>
@@ -365,6 +381,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script type="text/javascript" src="/js/style-customizer.js"></script>
 
 
+
 <script type="text/javascript">
  (function($){
   "use strict";  
@@ -433,6 +450,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }); 
  })(jQuery);
     
+</script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+document.onkeydown = function(e) {
+        if (e.ctrlKey && 
+            (e.keyCode === 67 || 
+             e.keyCode === 86 || 
+             e.keyCode === 85 || 
+             e.keyCode === 117)) {
+            return false;
+        } else {
+            return true;
+        }
+};
+$(document).keypress("u",function(e) {
+  if(e.ctrlKey)
+  {
+return false;
+}
+else
+{
+return true;
+}
+});
 </script>
  @yield('scripts')
   

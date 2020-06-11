@@ -98,7 +98,7 @@
                      </div>
                    <div class="car-list">
                      <ul class="list-inline">
-                       <li><i class="fa fa-registered"></i> {{$auto->anio}}</li>
+                       <li><i class="fa fa-calendar"></i> {{$auto->anio}}</li>
                        <li><i class="fa fa-cog"></i>{{$auto->transmision}} </li>
                        <li><i class="fa fa-shopping-cart"></i> {{$auto->kilometraje}}</li>
                      </ul>

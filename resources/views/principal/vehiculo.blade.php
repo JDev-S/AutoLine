@@ -83,7 +83,9 @@
     
     <li data-index="rs-3" data-transition="random-static,random-premium,random" data-slotamount="default,default,default,default" data-hideafterloop="0" data-hideslideonmobile="off"  data-randomtransition="on" data-easein="default,default,default,default" data-easeout="default,default,default,default" data-masterspeed="default,default,default,default"  data-thumb=""  data-rotate="0,0,0,0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
     <!-- MAIN IMAGE -->
-        <img src='{{$oAutos->foto}}'  alt="imagen_auto"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+         @foreach($oAutos->fotos as $auto)
+        <img src='{{$auto->foto}}'  alt="imagen_auto"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+        @endforeach
     <!-- LAYERS -->
 
   </li>
@@ -176,8 +178,8 @@
            </div>
            <div class="car-list">
              <ul class="list-inline">
-               <li><i class="fa fa-registered"></i>{{$auto->anio}}</li>
-               <li><i class="fa fa-cog"></i>{{$auto->transmision}}</li>
+               <li><i class="fa fa-calendar"></i>{{$auto->anio}}</li>
+               <li><i class="fa fa-car"></i>{{$auto->transmision}}</li>
                <li><i class="fa fa-dashboard"></i>{{$auto->kilometraje}}</li>
              </ul>
           </div>
@@ -221,8 +223,18 @@
                 </div>
                    
                    <div class="form-group">
-                   <label>Nombre*</label>
+                   <label>Nombre(s)*</label>
                    <input type="text" class="form-control"  id="nombre" name="nombre" required>
+                </div>
+                   
+                   <div class="form-group">
+                   <label>Primer apellido*</label>
+                   <input type="text" class="form-control"  id="paterno" name="paterno" required>
+                </div>
+                   
+                   <div class="form-group">
+                   <label>Segundo apellido*</label>
+                   <input type="text" class="form-control"  id="materno" name="materno" required>
                 </div>
                    
                    
@@ -262,7 +274,8 @@
                   <!--<a class="button red" href="#">Realizar cotización.</a>-->
                 </div>
               </form>
-                <a href"/"> Requisitos para el financiamiento</a>
+                <a href="/images/INFORMACIÓN SOBRE FINANCIAMIENTOS.pdf" target="_blank">Requisitos para el financiamiento</a>
+                <p>Copia el precio del auto para cotizar</p>
                <!-- <h4>Financiación</h4>
 <p>Cálculo de mensualidades:</p>
 <p id="mensualidad12"></p>
