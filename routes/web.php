@@ -26,7 +26,12 @@ Route::get('/live', function () {
 });
 
 Route::get('/contacto','HorarioController@mostrar_horario');
+/*Modulo del cotizador*/
+Route::post('/cotizacion','EmailController@cotizacion')->name('cotizacion');
 
+Route::get('/cotizador','EmailController@cotizador');
+
+/*------------------------------------------------------------------------------------------*/
 /*Admin en Auto*/
 Route::get('/Admin_auto','AutoController@autos_mostrar')->middleware('admin:1')->name('Admin_auto');
 
@@ -94,7 +99,7 @@ Route::post('/Admin_horario_editar','HorarioController@actualizar');
 Route::post('/contactar', 'EmailController@contact')->name('contact');
 
 Route::post('/cotizar', 'EmailController@cotizar')->name('cotizar');
-/*Mandar correo desde cotizador*/
+
 
 /*Logueo del Administrador*/
 Route::get('/Admin_login', function () {

@@ -254,7 +254,7 @@ select.addEventListener('change',
     var selectedOption = this.options[select.selectedIndex];
     //alert(selectedOption.value + ': ' + selectedOption.text);
     id_auto=selectedOption.value;
-    alert(id_auto);
+    //alert(id_auto);
     
        var token = '{{csrf_token()}}';// ó $("#token").val() si lo tienes en una etiqueta html.
     var data={id_auto:id_auto,_token:token};
@@ -263,7 +263,7 @@ select.addEventListener('change',
         url: "/esp_faltantes",
         data: data,
         success: function (msg) {
-            alert("Mensaje enviado"+msg);
+            //alert("Mensaje enviado"+msg);
             
        /*              <div class="form-group">
            <label for="recipient-name" class="col-form-label">Autos:</label>

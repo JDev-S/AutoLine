@@ -451,7 +451,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  })(jQuery);
     
 </script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
 document.onkeydown = function(e) {
         if (e.ctrlKey && 
@@ -474,7 +474,7 @@ else
 return true;
 }
 });
-</script>
+</script>-->
  @yield('scripts')
   
 </body>

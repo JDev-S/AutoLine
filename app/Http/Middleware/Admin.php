@@ -25,7 +25,7 @@ class Admin
             return redirect('/Admin_login');     
         }
         else
-            if($correo=='autoline@gmail.com'){
+            if($correo=='autoline155@gmail.com'){
 
             
                 $id=1;
